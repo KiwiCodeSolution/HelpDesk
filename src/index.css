@@ -15,10 +15,6 @@
     width: 100%;
   }
 
-  label {
-    cursor: pointer;
-  }
-
   p,
   h1,
   h2,
@@ -80,6 +76,7 @@
 }
 
 .wrapper {
+  width: 100%;
   padding-left: 100px;
   padding-right: 100px;
   margin-left: auto;
@@ -87,7 +84,7 @@
 }
 
 .hero-wrapper {
-  background-image: url("../public/images/bg_hero.png");
+  background-image: url("/images/bg_hero.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -154,4 +151,21 @@
 .service-item:hover .service-back {
   opacity: 1;
   transform: translateX(0);
+}
+
+.about {
+  background-image: url("/images/bg_about_gradient.png");
+  background-size: 1920px 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(1, 79, 149, 0) 0%,
+    rgba(1, 71, 139, 0) 31.59%,
+    #023575 39.49%,
+    rgba(3, 13, 66, 0) 76.54%
+  );
 }

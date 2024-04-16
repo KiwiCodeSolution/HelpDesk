@@ -9,7 +9,7 @@ import Services from "./sections/services";
 
 export const App = () => {
   return (
-    <div className="mx-auto relative">
+    <div className="mx-auto relative overflow-hidden">
       <Header />
       <Hero />
       <Services />
