@@ -112,7 +112,7 @@
 
 .button-blue:hover {
   box-shadow: 0px 0px 16px 4px #0081ff;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 .button-blue:active {
@@ -168,4 +168,36 @@
     #023575 39.49%,
     rgba(3, 13, 66, 0) 76.54%
   );
+}
+
+.vector {
+  background: linear-gradient(90deg, #3f3f3f 0%, #939393 53.5%, #3f3f3f 100%);
+}
+
+.modal-wrapper {
+  background: linear-gradient(
+    90deg,
+    #014f95 0%,
+    #014a8e 10.5%,
+    #024588 16.5%,
+    #024284 24.5%,
+    #023979 33%,
+    #023574 39.5%,
+    #022b67 48.5%,
+    #02205a 61.5%,
+    #03134a 75.5%,
+    #030d42 88.5%,
+    #030d42 100%
+  );
+  transition: height 0.5s ease;
+}
+
+.cross {
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+button:hover .cross {
+  fill: #e38800;
+  transform: rotate(90deg);
 }
