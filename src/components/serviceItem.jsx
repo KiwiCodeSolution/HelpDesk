@@ -20,12 +20,12 @@ const ServiceItem = ({ item, clickFn }) => {
         <div className="w-full h-[103px] bg-blue pl-2 flex relative">
           <div className="w-[calc(100%-80px)] h-full">
             <p className="text-bold-24">{item.title}</p>
-            <p className="text-base font-medium">{item.text}</p>
+            <p className="text-base font-medium leading-[18.75px]">{item.text}</p>
           </div>
 
           <div className="w-[80px] h-full bg-orange flex flex-col items-center justify-center absolute top-0 right-0 price">
             <p>від</p>
-            <p>{item.price} грн.</p>
+            <p>{item.price} грн</p>
           </div>
         </div>
       </div>

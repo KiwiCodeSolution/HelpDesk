@@ -53,7 +53,7 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
       <section
         className={`bg-black flex flex-col absolute top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2 z-[999] rounded-[32px]`}
       >
-        {type !== "notification" && (
+        {type !== "lang" && (
           <button
             className="w-8 h-8 p-2 bg-[#426073] rounded-full flex items-center justify-center absolute top-3 right-10"
             onClick={closeModal}

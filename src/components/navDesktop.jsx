@@ -11,7 +11,9 @@ const navDesktop = ({ section, styles }) => {
   return (
     <ul
       className={`flex flex-col justify-between ${
-        section === "header" ? "w-[480px] xl:flex-row items-center gap-x-10 h-[111px]" : ""
+        section === "header"
+          ? "w-[480px] xl:flex-row items-center gap-x-10 h-[111px]"
+          : "h-[164px] gap-y-1 ml-10 "
       } ${styles}`}
     >
       {NAV_ELEMENTS.map(el => (

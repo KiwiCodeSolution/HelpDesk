@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
 const buttonsStyle = {
-  orange: "w-[304px] bg-orange text-bold-24 py-3 px-9 hover:shadow-orangeBtnHover button-orange",
-  send: "w-[160px] h-[48px] bg-orange text-base font-bold py-3 px-9 hover:shadow-orangeBtnHover button-orange",
+  orange: "w-[304px] bg-orange text-bold-24 py-3 px-9 orange-button",
+  send: "w-[160px] h-[48px] bg-orange text-base font-bold py-3 px-9 orange-button",
   blue: "w-[460px] h-[60px] py-[18px] px-[84px] bg-lightblue text-medium-20 button-blue",
 };
 
