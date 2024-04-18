@@ -75,6 +75,10 @@
   }
 }
 
+.body-scroll-lock {
+  overflow: hidden;
+}
+
 .wrapper {
   width: 100%;
   padding-left: 100px;

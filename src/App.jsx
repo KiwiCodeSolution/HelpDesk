@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
@@ -11,13 +12,19 @@ import Hero from "./sections/hero";
 import Services from "./sections/services";
 import { useTranslation } from "react-i18next";
 import Overlay from "./components/UI/overlay";
+import useScrollBlock from "./hooks/useScrollBlock";
 
 export const App = () => {
+  const [blockScroll, allowScroll] = useScrollBlock();
   const isCurrentLanguage = localStorage.getItem("language");
-
-  console.log(isCurrentLanguage);
   const [isModalOpen, setIsModalOpen] = useState(isCurrentLanguage === null);
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (!isModalOpen) {
+      allowScroll();
+    }
+  }, [isModalOpen, allowScroll]);
 
   function changeLanguage(language) {
     i18n.changeLanguage(language);

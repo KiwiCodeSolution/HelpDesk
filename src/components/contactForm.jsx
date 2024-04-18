@@ -31,29 +31,24 @@ const ContactForm = ({ clickFn, problem }) => {
 
   const { VITE_API_TOKEN: TOKEN, VITE_API_CHAT_ID: CHAT_ID } = import.meta.env;
 
-  console.log(TOKEN, CHAT_ID);
-
   const API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   const onSubmit = data => {
+    console.log(data);
     const message = problem
-      ? `<b>Нове звернення з сайту!</b> %0A<b>Ім'я:</b> ${data.name} %0A<b>Телефон:</b> ${data.phone}%0A<b>Повідомлення:</b> ${data.text} 
-      %0A<b>Тема:</b> ${problem}`
+      ? `<b>Нове звернення з сайту!</b> %0A<b>Ім'я:</b> ${data.name} %0A<b>Телефон:</b> ${data.phone}%0A<b>Повідомлення:</b> ${data.text} %0A<b>Тема:</b> ${problem}`
       : `<b>Нове звернення з сайту!</b> %0A<b>Ім'я:</b> ${data.name} %0A<b>Телефон:</b> ${data.phone}%0A<b>Повідомлення:</b> ${data.text}`;
 
-    // fetch(`${API}?chat_id=${CHAT_ID}&text=${message}&parse_mode=html`)
-    //   .then(res => {
-    //     clickFn && clickFn();
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-    clickFn && clickFn();
-    console.log(data);
-    console.log(message);
+    fetch(`${API}?chat_id=${CHAT_ID}&text=${message}&parse_mode=html`)
+      .then(res => {
+        clickFn && clickFn();
+        reset();
+      })
+      .catch(error => {
+        console.log(error);
+      });
 
     setIsCheck(false);
-    reset();
   };
 
   const ErrorWrapper = ({ text }) => {

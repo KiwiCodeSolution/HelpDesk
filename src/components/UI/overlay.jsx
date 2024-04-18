@@ -11,8 +11,8 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
   const [blockScroll, allowScroll] = useScrollBlock();
 
   function closeModal() {
-    clickFn();
     allowScroll();
+    clickFn();
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
 
   function handleOverlayClick(e) {
     if (e.target === e.currentTarget) {
-      clickFn();
+      closeModal();
     }
     return;
   }
