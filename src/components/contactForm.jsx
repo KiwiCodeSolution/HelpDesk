@@ -27,10 +27,14 @@ const ContactForm = ({ clickFn, problem }) => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const text = watch("text");
+  const maxTextLength = 250;
 
   const { VITE_API_TOKEN: TOKEN, VITE_API_CHAT_ID: CHAT_ID } = import.meta.env;
 
@@ -65,44 +69,50 @@ const ContactForm = ({ clickFn, problem }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-[600px] mx-auto flex flex-col relative">
-      <p className="text-center text-regular-16 my-6">{t(`feedback_subtitle`)}</p>
-      <div className="flex flex-col mb-6 relative">
+      <p className="text-center text-regular-16 tablet:my-4 desktop:my-6">
+        {t(`feedback_subtitle`)}
+      </p>
+      <div className="tablet:w-[480px] laptop:w-full flex flex-col mb-6 mx-auto relative">
         <label className="text-medium-14">{t(`name`)}</label>
         <input
           name="name"
           {...register("name")}
-          className="h-9 rounded-[6px] outline-none py-2 px-3 placeholder:text-xs placeholder:text-grey text-black"
-          placeholder="Ваше ім'я"
+          className="h-9 rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
+          placeholder={t(`placeholder.name`)}
         />
         {errors.name && <ErrorWrapper text={errors.name.message} />}
       </div>
 
-      <div className="flex flex-col mb-6 relative">
+      <div className="tablet:w-[480px] laptop:w-full flex flex-col mb-6 mx-auto relative">
         <label className="text-medium-14">{t(`phone`)}</label>
         <input
           name="phone"
           {...register("phone")}
           placeholder="+380XXXXXXXXX"
-          className="h-9 rounded-[6px] outline-none py-2 px-3 placeholder:text-xs placeholder:text-grey text-black"
+          className="h-9 rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
         />
         {errors.phone && <ErrorWrapper text={errors.phone.message} />}
       </div>
 
-      <div className="flex flex-col mb-8 relative">
+      <div className="tablet:w-[480px] laptop:w-full flex flex-col mb-8 mx-auto relative">
         <label className="text-medium-14 mb-1">{t(`text`)}</label>
         <textarea
           name="text"
-          {...register("text", { maxLength: 250 })}
-          className="h-[104px] rounded-[6px] outline-none py-2 px-3 placeholder:text-xs placeholder:text-grey text-black"
+          {...register("text", { maxLength: maxTextLength })}
+          className="h-[104px] rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
           style={{
             resize: "none",
           }}
-          placeholder="Ваше повідомлення"
+          placeholder={t(`placeholder.text`)}
         />
         {errors.text && <ErrorWrapper text={errors.text.message} />}
+        {/* рахуємо кількість введених символів */}
+        <p className="tablet:w-[480px] laptop:w-full mt-1 pr-[6px] text-right text-base text-grey">
+          {text ? text.length : 0} / {maxTextLength}
+        </p>
       </div>
 
-      <label className="pl-[10px] flex gap-x-5 text-regular-16 mb-8 relative">
+      <label className="tablet:w-[480px] laptop:w-full flex gap-x-5 text-regular-16 mb-8 mx-auto relative">
         <input
           name="agree"
           type="checkbox"

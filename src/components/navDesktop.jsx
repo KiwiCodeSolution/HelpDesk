@@ -8,22 +8,22 @@ const NAV_ELEMENTS = [
   { id: 4, linkId: "#contacts" },
 ];
 
-const NavDesktop = ({ section, styles }) => {
+const NavDesktop = ({ section }) => {
   const { t } = useTranslation();
 
   return (
     <ul
-      className={`flex flex-col justify-between ${
+      className={`flex ${
         section === "header"
-          ? "w-[480px] xl:flex-row items-center gap-x-10 h-[111px]"
-          : "h-[164px] gap-y-1 ml-10 "
-      } ${styles}`}
+          ? "w-[274px] laptop:w-[329px] desktop:w-[480px] gap-x-4 laptop:gap-x-6 desktop:gap-x-10 justify-between "
+          : "h-[164px] flex-col gap-y-1 desktop:ml-10 "
+      }`}
     >
       {NAV_ELEMENTS.map(el => (
-        <li key={el.id} className="mx-auto md:ml-0">
+        <li key={el.id} className="h-full flex items-center">
           <a
             href={el.linkId}
-            className="cursor-pointer text-medium-20 hover:text-orange hover:underline hover:underline-offset-2"
+            className="cursor-pointer text-sm font-medium laptop:text-base desktop:text-medium-20 hover:text-orange hover:underline hover:underline-offset-2"
           >
             {t(`nav.${el.id - 1}`)}
           </a>

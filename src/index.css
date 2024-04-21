@@ -81,25 +81,78 @@
 
 .wrapper {
   width: 100%;
-  padding-left: 100px;
-  padding-right: 100px;
+
+  @media screen and (min-width: 360px) {
+    font-size: 48px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero-wrapper {
-  background-image: url("/images/bg_hero.png");
+@media only screen and (max-width: 767px) {
+  .hero-wrapper {
+    background-image: url("/images/bg_hero_mobile.png");
+    background-position: center;
+    /* background-size: 571px 447px; */
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-wrapper {
+    background-image: url("/images/bg_hero.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .about {
+    background-image: url("/images/bg_about_gradient.png");
+    background-size: 1920px 100%;
+    background-position: center 63px;
+    background-repeat: no-repeat;
+  }
+
+  .contacts {
+    background-image: url("/images/bg_contacts_gradient.png");
+    background-size: 1920px 100%;
+    background-position: center left 15%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    background-position: center 83px;
+  }
+
+  .contacts {
+    background-position: center;
+  }
+}
+
+.header-wrapper {
+  background-image: url("/images/bg_header.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-@keyframes buttonPress {
-  0% {
-  }
-  100% {
-    transform: scale(0.95);
-  }
 }
 
 .orange-button {
@@ -127,18 +180,12 @@
   box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.35) inset;
 }
 
-@keyframes buttonHover {
-  0% {
+@media only screen and (min-width: 1440px) {
+  .service-item:hover {
+    box-shadow: 0px 0px 32px 8px #ffffff40;
+    animation-timing-function: ease-out;
+    animation-duration: 150ms;
   }
-  100% {
-    transform: scale(1.05);
-  }
-}
-
-.service-item:hover {
-  box-shadow: 0px 0px 32px 8px #ffffff40;
-  animation-timing-function: ease-out;
-  animation-duration: 150ms;
 }
 
 .price {
@@ -158,13 +205,6 @@
 .service-item:hover .service-back {
   opacity: 1;
   transform: translateX(0);
-}
-
-.about {
-  background-image: url("/images/bg_about_gradient.png");
-  background-size: 1920px 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .gradient {
@@ -209,9 +249,9 @@ button:hover .cross {
   transform: rotate(90deg);
 }
 
-.contacts {
+/* .contacts {
   background-image: url("/images/bg_contacts_gradient.png");
   background-size: 1920px 100%;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */

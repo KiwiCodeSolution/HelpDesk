@@ -51,11 +51,13 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
       onClick={handleOverlayClick}
     >
       <section
-        className={`bg-black flex flex-col absolute top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2 z-[999] rounded-[32px]`}
+        className={`${
+          type !== "lang" ? "tablet:w-[640px] laptop:w-[752px] desktop:w-[952px]" : ""
+        }   flex flex-col absolute top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2 z-[999] rounded-[32px]`}
       >
         {type !== "lang" && (
           <button
-            className="w-8 h-8 p-2 bg-[#426073] rounded-full flex items-center justify-center absolute top-3 right-10"
+            className="w-8 h-8 p-2 bg-[#426073] rounded-full flex items-center justify-center absolute top-3 right-6"
             onClick={closeModal}
           >
             <Cross className={"w-5 h-5 cross"} />

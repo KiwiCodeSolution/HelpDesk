@@ -20,6 +20,17 @@ export const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(isCurrentLanguage === null);
   const { i18n } = useTranslation();
 
+  // Функція для зміни назви сайту в залежності від обраної мови
+  function changeTitleByLanguage(language) {
+    const titles = {
+      ua: "Комп'ютерний сервіс",
+      ru: "Компьютерный сервис",
+    };
+
+    // Встановлюємо нове значення для тегу <title> в залежності від обраної мови
+    document.title = titles[language];
+  }
+
   useEffect(() => {
     if (!isModalOpen) {
       allowScroll();
@@ -29,6 +40,7 @@ export const App = () => {
   function changeLanguage(language) {
     i18n.changeLanguage(language);
     localStorage.setItem("language", language);
+    changeTitleByLanguage(language);
     setIsModalOpen(false);
   }
 

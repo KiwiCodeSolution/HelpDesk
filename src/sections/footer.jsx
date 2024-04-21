@@ -21,12 +21,12 @@ const Footer = () => {
 
   return (
     <footer className="w-full min-h-[337px] overflow-hidden">
-      <div className="wrapper pt-[55px] flex flex-col">
-        <div className="flex items-center">
+      <div className="wrapper tablet:pt-7 desktop:pt-[55px] flex flex-col">
+        <div className="flex">
           <NavDesktop />
-          <div className="w-full grid grid-cols-4 ml-[102px] items-center">
+          <div className="w-full grid tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 tablet:ml-7 desktop:ml-[102px] laptop:gap-y-1 items-center">
             {items.map(el => (
-              <p key={el} className="text-base font-light leading-[26px]">
+              <p key={el} className="text-base font-light leading-[26px] ">
                 {t(`what_do_we_do.${el - 1}`)}
               </p>
             ))}

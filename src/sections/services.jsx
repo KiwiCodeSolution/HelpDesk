@@ -19,8 +19,8 @@ const Services = () => {
   return (
     <section className="w-full" id="services">
       <div className="wrapper py-10">
-        <TitleSections styles={"mb-10"}>{t(`services_title`)}</TitleSections>
-        <div className="grid grid-cols-4 gap-x-4 gap-y-8 z-0 mb-10">
+        <TitleSections styles={"tablet:mb-8 desktop:mb-10"}>{t(`services_title`)}</TitleSections>
+        <div className="grid tablet:grid-cols-3 laptop:grid-cols-4 gap-x-4 gap-y-8 z-0 mb-10">
           {items.map(item => (
             <ServiceItem key={item.id} item={item} clickFn={openingModalForm} />
           ))}

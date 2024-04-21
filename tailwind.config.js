@@ -36,10 +36,10 @@ export default {
         blueBtnHover: "0px 0px 16px 4px rgb(0,129,255,1)", 
       },
       screens: {
-      'mobile': '767px',
-      'tablet': '1023px',
-      'laptop': '1439px',
-      'desktop': '1440px',
+      'tablet': '768px', // min-width: 767px
+      'laptop': '1024px', // min-width: 1023px
+      'desktop': '1440px', // min-width: 1440px
+      
       
     },
 

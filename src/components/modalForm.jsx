@@ -12,8 +12,8 @@ const ModalForm = ({ clickFn, problem }) => {
   return (
     <Overlay clickFn={clickFn} type={"form"} step={countStep}>
       <div
-        className={`w-[952px] modal-wrapper rounded-[32px] ${
-          countStep === 1 ? "h-[748px]" : "h-[528px]"
+        className={`modal-wrapper rounded-[32px] ${
+          countStep === 1 ? "tablet:h-[715px] laptop:h-[748px]" : "h-[528px]"
         }`}
       >
         <h3 className="my-[14px] text-center text-bold-24">{t(`modal_title`)}</h3>

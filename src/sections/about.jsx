@@ -20,22 +20,33 @@ const About = () => {
   return (
     <section className="w-full about relative overflow-hidden" id="about">
       <div className="wrapper">
-        <TitleSections styles={"mb-8"}>{t(`about_title`)}</TitleSections>
-        <div className="w-[483px] flex flex-col gap-y-4">
-          <p className="text-regular-16 leading-6">{t(`about.0`)}</p>
-          <p className="text-regular-16 leading-6">{t(`about.1`)}</p>
-          <p className="text-regular-16 leading-6">{t(`about.2`)}</p>
+        <TitleSections styles={"tablet:mb-6  desktop:mb-8"}>{t(`about_title`)}</TitleSections>
+        <div className="tablet:w-[481px] desktop:w-[483px] flex flex-col gap-y-4">
+          <p className="tablet:text-base font-medium desktop:text-regular-16 leading-6">
+            {t(`about.0`)}
+          </p>
+          <p className="tablet:text-base font-medium desktop:text-regular-16 leading-6">
+            {t(`about.1`)}
+          </p>
+          <p className="tablet:text-base font-medium desktop:text-regular-16 leading-6">
+            {t(`about.2`)}
+          </p>
         </div>
 
-        <ul className="w-[451px] flex gap-x-5 mt-[117px] mb-[47px]" ref={ref}>
+        <ul
+          className="w-[451px] flex gap-x-5 tablet:mt-[100px] laptop:mt-[105px] desktop:mt-[117px] tablet:mb-8  desktop:mb-[47px]"
+          ref={ref}
+        >
           {isVisible &&
             INDICATORS.map(({ value, id }) => (
               <li key={value} className="flex flex-col gap-y-2 text-center ">
-                <p className="text-bold-64 text-orange">
+                <p className="tablet:text-5xl tablet:font-bold laptop:text-bold-64 text-orange">
                   <CountUp end={value} />+
                 </p>
 
-                <p className="text-bold-24">{t(`indicators_category.${id - 1}`)}</p>
+                <p className="tablet:text-xl tablet:font-bold laptop:text-bold-24">
+                  {t(`indicators_category.${id - 1}`)}
+                </p>
               </li>
             ))}
         </ul>
