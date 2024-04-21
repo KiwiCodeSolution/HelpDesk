@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Nunito", sans-serif;
+    color: #fff;
+    background: linear-gradient(90deg, #014f95 0%, #030d42 100%);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  a {
+    outline: none;
+    display: inline-block;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+  }
+
+  button {
+    display: block;
+
+    padding: 0;
+    border: 0;
+    outline: none;
+
+    box-shadow: 0px;
+    background-color: transparent;
+
+    font-family: inherit;
+    color: inherit;
+    fill: currentColor;
+
+    cursor: pointer;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  svg {
+    transition: fill 250ms ease;
+  }
+
+  ul,
+  li,
+  ol {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+}
+
+.body-scroll-lock {
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+
+  @media screen and (min-width: 360px) {
+    font-size: 48px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-wrapper {
+    background-image: url("/images/bg_hero_mobile.png");
+    background-position: center;
+    /* background-size: 571px 447px; */
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-wrapper {
+    background-image: url("/images/bg_hero.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .about {
+    background-image: url("/images/bg_about_gradient.png");
+    background-size: 1920px 100%;
+    background-position: center 63px;
+    background-repeat: no-repeat;
+  }
+
+  .contacts {
+    background-image: url("/images/bg_contacts_gradient.png");
+    background-size: 1920px 100%;
+    background-position: center left 15%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    background-position: center 83px;
+  }
+
+  .contacts {
+    background-position: center;
+  }
+}
+
+.header-wrapper {
+  background-image: url("/images/bg_header.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.orange-button {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.orange-button:hover {
+  box-shadow: 0px 0px 32px 12px #006eaf;
+}
+
+.orange-button:active {
+  box-shadow: 0px 0px 16px 1px #000000 inset;
+}
+
+.button-blue {
+  box-shadow: 0px 0px 32px 4px #0081ff inset;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.button-blue:hover {
+  box-shadow: 0px 0px 16px 4px #0081ff;
+}
+
+.button-blue:active {
+  box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.35) inset;
+}
+
+@media only screen and (min-width: 1440px) {
+  .service-item:hover {
+    box-shadow: 0px 0px 32px 8px #ffffff40;
+    animation-timing-function: ease-out;
+    animation-duration: 150ms;
+  }
+}
+
+.price {
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .price {
+  transform: translateX(105%);
+}
+
+.service-back {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.service-item:hover .service-back {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(1, 79, 149, 0) 0%,
+    rgba(1, 71, 139, 0) 31.59%,
+    #023575 39.49%,
+    rgba(3, 13, 66, 0) 76.54%
+  );
+}
+
+.vector {
+  background: linear-gradient(90deg, #3f3f3f 0%, #939393 53.5%, #3f3f3f 100%);
+}
+
+.modal-wrapper {
+  background: linear-gradient(
+    90deg,
+    #014f95 0%,
+    #014a8e 10.5%,
+    #024588 16.5%,
+    #024284 24.5%,
+    #023979 33%,
+    #023574 39.5%,
+    #022b67 48.5%,
+    #02205a 61.5%,
+    #03134a 75.5%,
+    #030d42 88.5%,
+    #030d42 100%
+  );
+  transition: height 0.5s ease;
+}
+
+.cross {
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+button:hover .cross {
+  fill: #e38800;
+  transform: rotate(90deg);
+}
+
+/* .contacts {
+  background-image: url("/images/bg_contacts_gradient.png");
+  background-size: 1920px 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
