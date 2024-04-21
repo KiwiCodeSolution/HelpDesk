@@ -7,7 +7,7 @@ const Experts = () => {
   return (
     <section className="w-full">
       <div className="wrapper tablet:h-[200px] desktop:h-[220px] py-4 bg-lightblue">
-        <article className="tablet:w-[608px] laptop:w-[640px] desktop:w-[1200px] h-full flex tablet:gap-x-7 laptop:gap-x-[60px] items-center mx-auto">
+        <article className="tablet:w-[608px] laptop:w-[640px] desktop:w-[1200px] h-full flex tablet:gap-x-7 laptop:gap-x-[60px] items-center mx-auto desktop:ml-0">
           <img
             src={Expert}
             alt="Фото експерта компанії"
