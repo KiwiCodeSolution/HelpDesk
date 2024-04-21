@@ -2,13 +2,15 @@ import { useState } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import TitleSections from "../components/titleSections";
+import { useTranslation } from "react-i18next";
 
 const INDICATORS = [
-  { value: "5", category: "Років роботи" },
-  { value: "1800", category: "Задоволених клієнтів" },
+  { id: 1, value: "5" },
+  { id: 2, value: "1800" },
 ];
 
 const About = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({ threshold: 0 });
 
@@ -18,34 +20,22 @@ const About = () => {
   return (
     <section className="w-full about relative overflow-hidden" id="about">
       <div className="wrapper">
-        <TitleSections styles={"mb-8"}>Про нашу компанію</TitleSections>
+        <TitleSections styles={"mb-8"}>{t(`about_title`)}</TitleSections>
         <div className="w-[483px] flex flex-col gap-y-4">
-          <p className="text-regular-16 leading-6">
-            Наша місія – зробити ваше життя простіше, забезпечуючи швидкий та надійний ремонт
-            комп&apos;ютерів за доступними цінами. Ми цінуємо ваш час і прагнемо, щоб ви могли
-            швидко повернутися до своїх справ, маючи працююче обладнання.
-          </p>
-          <p className="text-regular-16 leading-6">
-            Не важливо, чи зламався ваш комп&apos;ютер, чи потрібна профілактика ноутбука або
-            допомога в налаштуванні програмного забезпечення – зверніться до нас, і ми із
-            задоволенням вам допоможемо.
-          </p>
-          <p className="text-regular-16 leading-6">
-            Ми гарантуємо професійний підхід до кожного випадку, а також надаємо повну прозорість та
-            чесність у всіх наших діях. Наша мета – не просто виправити вашу техніку, а й встановити
-            з вами довгострокові стосунки на основі довіри та поваги.
-          </p>
+          <p className="text-regular-16 leading-6">{t(`about.0`)}</p>
+          <p className="text-regular-16 leading-6">{t(`about.1`)}</p>
+          <p className="text-regular-16 leading-6">{t(`about.2`)}</p>
         </div>
 
         <ul className="w-[451px] flex gap-x-5 mt-[117px] mb-[47px]" ref={ref}>
           {isVisible &&
-            INDICATORS.map(({ value, category }) => (
+            INDICATORS.map(({ value, id }) => (
               <li key={value} className="flex flex-col gap-y-2 text-center ">
                 <p className="text-bold-64 text-orange">
                   <CountUp end={value} />+
                 </p>
 
-                <p className="text-bold-24">{category}</p>
+                <p className="text-bold-24">{t(`indicators_category.${id - 1}`)}</p>
               </li>
             ))}
         </ul>

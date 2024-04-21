@@ -34,57 +34,15 @@ export default {
         orangeBtnHover: "0px 0px 32px 12px rgba(0,110,175,1)", 
         orangeBtnActive: "0px 0px 16px 1px rgba(0,0,0,1)", 
         blueBtnHover: "0px 0px 16px 4px rgb(0,129,255,1)", 
-
-
-        socialIcon: "0px 0px 10px 0px rgba(43,209,195,0.6)",
-        menuIcon: "0px 0px 10px 0px rgba(43,209,195,0.6)",
       },
+      screens: {
+      'mobile': '767px',
+      'tablet': '1023px',
+      'laptop': '1439px',
+      'desktop': '1440px',
+      
+    },
 
-      keyframes: {
-        up: {
-          "0%": {
-            transform: "translateY(100%)",
-          },
-          "100%": {
-            transform: "translateY(0)",
-          },
-        },
-        right: {
-          "0%": {
-            transform: "translateX(-150%)",
-          },
-          "100%": {
-            transform: "translateX(0)",
-          },
-        },
-        hover: {
-          "100%": {
-            transform: "translateX(0)",
-          },
-        },
-        pulsation: {
-          "50%": { transform: "scale(1); opacity: 1" },
-          "0%, 100%": { transform: "scale(1.05); opacity: 0.8" },
-        },
-        ripple: {
-          "0%": {
-            boxShadow: " 0 0 0 0 rgba(43,209,195,0.6)",
-          },
-          "60%": {
-            boxShadow: "0 0 0 20px rgba(43,209,195,0)",
-          },
-          "100%": {
-            boxShadow: "0 0 0 0 rgba(43,209,195,0)",
-          },
-        },
-      },
-      animation: {
-        up: "up",
-        right: "right 2s ease-in-out",
-        hover: "hover 2s ease-in-out",
-        pulsation: "pulsation 3s ease-in-out infinite",
-        ripple: "ripple 2s ease-in-out infinite",
-      },
     },
   },
   plugins: [],

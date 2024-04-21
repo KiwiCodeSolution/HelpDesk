@@ -1,12 +1,14 @@
 import { useState } from "react";
 import KiwiCode from "../components/kiwiCode";
 import NavDesktop from "../components/navDesktop";
-import items from "../data/servicesFooter.json";
+
 import Overlay from "../components/UI/overlay";
 import TermsOfService from "../components/termsOfService";
 import PrivacyPolicy from "../components/privacyPolicy";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const [typeModal, setTypeModal] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -15,6 +17,8 @@ const Footer = () => {
     setIsModalOpen(true);
   }
 
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
   return (
     <footer className="w-full min-h-[337px] overflow-hidden">
       <div className="wrapper pt-[55px] flex flex-col">
@@ -22,8 +26,8 @@ const Footer = () => {
           <NavDesktop />
           <div className="w-full grid grid-cols-4 ml-[102px] items-center">
             {items.map(el => (
-              <p key={el.id} className="text-base font-light leading-[26px]">
-                {el.text}
+              <p key={el} className="text-base font-light leading-[26px]">
+                {t(`what_do_we_do.${el - 1}`)}
               </p>
             ))}
           </div>

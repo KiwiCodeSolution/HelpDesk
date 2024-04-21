@@ -7,18 +7,21 @@ import { Checked, NoChecked, Warning } from "../icons/iconComponent";
 import { useState } from "react";
 import Button from "../components/UI/buttons";
 import { useForm } from "react-hook-form";
-
-const schema = yup.object({
-  name: yup.string().required("Ім'я та прізвище є обов'язковими"),
-  phone: yup
-    .string()
-    .required("Номер телефону є обов'язковим")
-    .matches(/^\+?\d+$/, "Номер телефону повинен містити лише цифри та знак '+'"),
-  text: yup.string().required("Це поле є обов'язковим"),
-  agree: yup.boolean().oneOf([true], "Для відправки форми потрібно погодитися з умовами"),
-});
+import { useTranslation } from "react-i18next";
 
 const ContactForm = ({ clickFn, problem }) => {
+  const { t } = useTranslation();
+
+  const schema = yup.object({
+    name: yup.string().required(t("validation.nameRequired")),
+    phone: yup
+      .string()
+      .required(t("validation.phoneRequired"))
+      .matches(/^\+?\d+$/, t("validation.phoneFormat")),
+    text: yup.string().required(t("validation.textRequired")),
+    agree: yup.boolean().oneOf([true], t("validation.agreeRequired")),
+  });
+
   const [isCheck, setIsCheck] = useState(false);
   const {
     register,
@@ -62,11 +65,9 @@ const ContactForm = ({ clickFn, problem }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-[600px] mx-auto flex flex-col relative">
-      <p className="text-center text-regular-16 my-6">
-        Заповніть дані нижче, щоб подати запит на ремонт.
-      </p>
+      <p className="text-center text-regular-16 my-6">{t(`feedback_subtitle`)}</p>
       <div className="flex flex-col mb-6 relative">
-        <label className="text-medium-14">Прізвище та Ім&apos;я </label>
+        <label className="text-medium-14">{t(`name`)}</label>
         <input
           name="name"
           {...register("name")}
@@ -77,7 +78,7 @@ const ContactForm = ({ clickFn, problem }) => {
       </div>
 
       <div className="flex flex-col mb-6 relative">
-        <label className="text-medium-14">Контактний номер телефону</label>
+        <label className="text-medium-14">{t(`phone`)}</label>
         <input
           name="phone"
           {...register("phone")}
@@ -88,7 +89,7 @@ const ContactForm = ({ clickFn, problem }) => {
       </div>
 
       <div className="flex flex-col mb-8 relative">
-        <label className="text-medium-14 mb-1">Детально опишіть проблему</label>
+        <label className="text-medium-14 mb-1">{t(`text`)}</label>
         <textarea
           name="text"
           {...register("text", { maxLength: 250 })}
@@ -111,14 +112,12 @@ const ContactForm = ({ clickFn, problem }) => {
           onClick={() => setIsCheck(!isCheck)}
         />
         {isCheck ? <Checked /> : <NoChecked />}
-        Даю згоду на обробку персональних даних
-        {errors.agree && !isCheck && (
-          <ErrorWrapper text={"Для відправки форми потрібно погодитися з умовами"} />
-        )}
+        {t(`check`)}
+        {errors.agree && !isCheck && <ErrorWrapper text={t(`validation.agreeRequired`)} />}
       </label>
 
       <Button type="submit" style={"send"} btnClass={"mx-auto"}>
-        Відправити
+        {t(`feedback_button`)}
       </Button>
     </form>
   );

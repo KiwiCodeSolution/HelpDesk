@@ -1,42 +1,36 @@
+import { useTranslation } from "react-i18next";
+
 const PrivacyPolicy = () => {
+  const { t } = useTranslation();
+
   return (
     <ul className="w-[70%} modal-wrapper h-fit py-7 px-10 rounded-[32px]">
-      <li className="my-[14px] text-center text-bold-24">Політика конфіденційності</li>
+      <li className="my-[14px] text-center text-bold-24">{t(`policy_title`)}</li>
       <li className="w-full h-1 vector mb-3" />
+      <li className="mb-4">{t(`policy_subtitle`)}</li>
       <li className="mb-4">
-        Ця Політика конфіденційності описує те, як ми збираємо, використовуємо і захищаємо вашу
-        особисту інформацію, яку ви надаєте нашому сайту.
+        <span className="font-bold">{t(`policy.0.title`)} </span>
+        {t(`policy.0.text`)}
       </li>
-      <li className="mb-2">
-        <span className="font-bold">1. Збір інформації: </span>Ми можемо збирати особисту
-        інформацію, таку як ваше ім&apos;я, номер телефону та інші контактні дані, якщо ви надаєте
-        їх добровільно через нашу форму зворотнього зв&apos;язку.
+      <li className="mb-4">
+        <span className="font-bold">{t(`policy.1.title`)} </span>
+        {t(`policy.1.text`)}
       </li>
-      <li className="mb-2">
-        <span className="font-bold">2. Використання інформації: </span> Зібрана нами інформація
-        використовується виключно для надання вам послуг, пов&apos;язаних з ремонтом
-        комп&apos;ютерів та техніки, а також для зв&apos;язку з вами щодо вашого запиту.
+      <li className="mb-4">
+        <span className="font-bold">{t(`policy.2.title`)} </span>
+        {t(`policy.2.text`)}
       </li>
-      <li className="mb-2">
-        <span className="font-bold">3. Захист інформації: </span> Ми вживаємо відповідних заходів
-        безпеки, щоб захистити вашу особисту інформацію від неправомірного доступу, втрати, зміни
-        або розголошення.
+      <li className="mb-4">
+        <span className="font-bold">{t(`policy.3.title`)} </span>
+        {t(`policy.3.text`)}
       </li>
-      <li className="mb-2">
-        <span className="font-bold">4. Розголошення інформації третім особам:</span> Ми не
-        розголошуємо вашу особисту інформацію третім особам без вашого дозволу, за винятком
-        випадків, коли це необхідно для надання вам послуг або виконання наших обов&apos;язків
-        згідно законодавства.
+      <li className="mb-4">
+        <span className="font-bold">{t(`policy.4.title`)} </span>
+        {t(`policy.4.text`)}
       </li>
-      <li className="mb-2">
-        <span className="font-bold">5. Зміни в політиці конфіденційності:</span> Ми залишаємо за
-        собою право змінювати цю Політику конфіденційності в будь-який час без попереднього
-        повідомлення. Будь-які зміни набувають чинності з моменту їх публікації на нашому веб-сайті.
-      </li>
-      <li className="mb-2">
-        <span className="font-bold">6. Контактна інформація: </span> Якщо у вас є будь-які питання
-        щодо цієї Політики конфіденційності, будь ласка, зв&apos;яжіться з нами за адресою, вказаною
-        на сайті у розділі контактів.
+      <li className="mb-4">
+        <span className="font-bold">{t(`policy.5.title`)} </span>
+        {t(`policy.5.text`)}
       </li>
     </ul>
   );
