@@ -5,6 +5,7 @@
     "text": "Встановлення, налаштування, помилки, синій екран смерті (BSod)",
     "price": "150",
     "isPopular": true,
+    "isNew": false,
     "image": "/images/services/windows.png"
   },
   {
@@ -13,6 +14,7 @@
     "text": "Оптимальне налаштування ноутбука під ваші потреби",
     "price": "170",
     "isPopular": true,
+    "isNew": false,
     "image": "/images/services/settings.png"
   },
   {
@@ -21,6 +23,7 @@
     "text": "Розблокування баннерів, видалення вірусів, троянів, будь-яких CMC червів",
     "price": "110",
     "isPopular": true,
+    "isNew": false,
     "image": "/images/services/viruses.png"
   },
   {
@@ -29,6 +32,7 @@
     "text": "Немає зображення, звуку, не бачить пристрої, не запускається, перезавантажується, глючить",
     "price": "40",
     "isPopular": true,
+    "isNew": false,
     "image": "/images/services/problems.png"
   },
   {
@@ -37,6 +41,7 @@
     "text": "Налаштування підключення пристроїв по Ethernet, WI-FI, 4G, мобільний інтрнет",
     "price": "230",
     "isPopular": true,
+    "isNew": false,
     "image": "/images/services/Internet.png"
   },
   {
@@ -45,6 +50,7 @@
     "text": "Налуштування корректної роботи та оновлення на ноутбуках та ПК",
     "price": "1000",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/bios.png"
   },
   {
@@ -53,6 +59,7 @@
     "text": "ОС, браузери, файлові менеджери, драйвери, кодеки, фотошоп, архіватори",
     "price": "90",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/programs.png"
   },
   {
@@ -61,6 +68,7 @@
     "text": "Розробка локальних мереж. Підключення ноутбуку до ПК, монітору, телевізору",
     "price": "100",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/local_networks.png"
   },
   {
@@ -69,6 +77,7 @@
     "text": "Чистка системи охолодження, заміна кулера, змащування рухомих частин",
     "price": "150",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/overheat.png"
   },
   {
@@ -77,6 +86,7 @@
     "text": "Профілактика від пилу, бруду і шерсті домашніх тварин, з розборкою ноутбуку",
     "price": "150",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/cleaning.png"
   },
   {
@@ -85,6 +95,7 @@
     "text": "Заміна компонентів на нові більшої продуктивності: HDD, пам’ять, відеокарта, процесор",
     "price": "100",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/upgrade.png"
   },
   {
@@ -93,6 +104,25 @@
     "text": "Виявлення причин неспровностей, перевірка сумісності ПО",
     "price": "40",
     "isPopular": false,
+    "isNew": false,
     "image": "/images/services/diagnostics.png"
+  },
+  {
+    "id": 13,
+    "title": "Ремонт генераторів",
+    "text": "Професійний ремонт бензинових/дизельних генераторів будь-якої складності у короткі сроки",
+    "price": "200",
+    "isPopular": false,
+    "isNew": true,
+    "image": "/images/services/generator.png"
+  },
+  {
+    "id": 14,
+    "title": "Ремонт та установка кондиціонерів",
+    "text": "",
+    "price": "200",
+    "isPopular": false,
+    "isNew": true,
+    "image": ""
   }
 ]

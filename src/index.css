@@ -83,7 +83,8 @@
   width: 100%;
 
   @media screen and (min-width: 360px) {
-    font-size: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   @media screen and (min-width: 768px) {
@@ -109,8 +110,14 @@
   .hero-wrapper {
     background-image: url("/images/bg_hero_mobile.png");
     background-position: center;
-    /* background-size: 571px 447px; */
     background-size: auto;
+    background-repeat: no-repeat;
+  }
+
+  .about {
+    background-image: url("/images/bg_about_gradient.png");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
   }
 }
@@ -118,16 +125,12 @@
 @media only screen and (min-width: 768px) {
   .hero-wrapper {
     background-image: url("/images/bg_hero.png");
-    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
   }
 
   .about {
-    background-image: url("/images/bg_about_gradient.png");
     background-size: 1920px 100%;
     background-position: center 63px;
-    background-repeat: no-repeat;
   }
 
   .contacts {

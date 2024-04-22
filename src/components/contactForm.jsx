@@ -99,7 +99,7 @@ const ContactForm = ({ clickFn, problem }) => {
         <textarea
           name="text"
           {...register("text", { maxLength: maxTextLength })}
-          className="h-[104px] rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
+          className="h-[90px] rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
           style={{
             resize: "none",
           }}
@@ -107,7 +107,7 @@ const ContactForm = ({ clickFn, problem }) => {
         />
         {errors.text && <ErrorWrapper text={errors.text.message} />}
         {/* рахуємо кількість введених символів */}
-        <p className="tablet:w-[480px] laptop:w-full mt-1 pr-[6px] text-right text-base text-grey">
+        <p className="tablet:w-[480px] laptop:w-full mt-1 pr-[6px] text-right text-base text-grey absolute -bottom-6">
           {text ? text.length : 0} / {maxTextLength}
         </p>
       </div>

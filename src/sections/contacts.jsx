@@ -1,6 +1,11 @@
 import { useTranslation } from "react-i18next";
 import TitleSections from "../components/titleSections";
 
+export const firstTell = "+380936526910";
+export const firstTellShow = "+38 (093) 652 69 10";
+export const secondTell = "+380505171154";
+export const secondTellShow = "+38 (050) 517 11 54";
+
 const Contacts = () => {
   const { t } = useTranslation();
 
@@ -18,41 +23,19 @@ const Contacts = () => {
           >
             {t(`address`)}
           </a>
+
           <a
             className="tablet:text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
-            href="mailto:#"
+            href={`tel:${firstTell}`}
           >
-            bill.sanders@example.com
+            {firstTellShow}
           </a>
+
           <a
             className="tablet:text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
-            href="tel:#"
+            href={`tel:${secondTell}`}
           >
-            (808) 555-0111
-          </a>
-          <a
-            className="tablet:text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
-            href="mailto:#"
-          >
-            felicia.reid@example.com
-          </a>
-          <a
-            className="tablet:text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
-            href="tel:#"
-          >
-            (270) 555-0117
-          </a>
-          <a
-            className="tablet:text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
-            href="mailto:#"
-          >
-            tim.jennings@example.com
-          </a>
-          <a
-            className="tablet:text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
-            href="tel:#"
-          >
-            (319) 555-0115
+            {secondTellShow}
           </a>
         </div>
       </div>
