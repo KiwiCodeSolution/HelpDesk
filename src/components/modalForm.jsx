@@ -4,6 +4,8 @@ import Overlay from "./UI/overlay";
 import ContactForm from "./contactForm";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { firstTell, firstTellShow, secondTell, secondTellShow } from "../sections/contacts";
+import { Life, Vodafone } from "../icons/iconComponent";
 
 const ModalForm = ({ clickFn, problem }) => {
   const { t } = useTranslation();
@@ -31,15 +33,23 @@ const ModalForm = ({ clickFn, problem }) => {
           </div>
         )}
 
-        <div className="w-full block mt-[22px] mx-auto">
+        <div className="w-full block mt-[16px] mx-auto">
           <p className="text-regular-16 text-center mb-1">{t(`modal_text.3`)}</p>
           <p className="text-regular-16 text-center mb-2">{t(`modal_text.4`)}</p>
           <div className="w-full flex flex-col items-center">
-            <a href="tel:#" className="text-bold-24">
-              +38 011 111 11 11 {t(`modal_text.5`)}
+            <a
+              href={`tel:${firstTell}`}
+              className="text-bold-24 flex items-center gap-x-2 text-[#FF000A] hover:underline hover:underline-offset-2"
+            >
+              <Vodafone />
+              {firstTellShow} {t(`modal_text.5`)}
             </a>
-            <a href="tel:#" className="text-bold-24">
-              +38 022 222 22 22 {t(`modal_text.6`)}
+            <a
+              href={`tel:${secondTell}`}
+              className="text-bold-24 flex items-center gap-x-2 text-[#FFC40C] hover:underline hover:underline-offset-2"
+            >
+              <Life />
+              {secondTellShow} {t(`modal_text.6`)}
             </a>
           </div>
         </div>

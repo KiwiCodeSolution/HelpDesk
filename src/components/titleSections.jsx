@@ -5,7 +5,7 @@ const TitleSections = ({ children, sections, styles }) => {
     <h2
       className={`${
         sections === "feedback" ? "text-center" : "text-left"
-      } ${styles} w-full tablet:text-[32px] laptop:text-[36px] desktop:text-bold-40`}
+      } ${styles} w-full text-[23px] tablet:text-[32px] laptop:text-[36px] desktop:text-bold-40`}
     >
       {children}
     </h2>

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "./UI/buttons";
 import { useTranslation } from "react-i18next";
+import NoImage from "/images/no_picture.jpg";
 
 const ServiceItem = ({ item, clickFn }) => {
   const { t } = useTranslation();
@@ -13,9 +14,14 @@ const ServiceItem = ({ item, clickFn }) => {
             {t(`services_popular`)}
           </p>
         )}
+        {item.isNew && (
+          <p className="w-[78px] h-6 py-1 px-2 bg-heavenly text-xs font-medium rounded-tl-[6px] rounded-br-[6px] absolute top-0 left-0 z-[10] uppercase">
+            новинка
+          </p>
+        )}
 
         <img
-          src={item.image}
+          src={item.image || NoImage}
           alt={`${
             localStorage.getItem("language") === "ua"
               ? "зображення, що описує послугу"
@@ -24,7 +30,7 @@ const ServiceItem = ({ item, clickFn }) => {
           className="w-full tablet:h-[178px] desktop:h-[240px] object-cover"
         />
 
-        <div className="w-full tablet:h-24 laptop:h-[86px] desktop:h-[103px] bg-blue tablet:p-[2px] desktop:pl-2 flex relative">
+        <div className="w-full tablet:h-24 laptop:h-[86px] desktop:h-[103px] bg-blue tablet:p-[2px] desktop:pl-2 flex relative overflow-hidden">
           <div className="tablet:w-full desktop:w-[calc(100%-80px)] h-full">
             <p className="tablet:text-lg tablet:font-bold desktop:text-bold-24">
               {t(`services.${item.id - 1}.title`)}
@@ -35,7 +41,7 @@ const ServiceItem = ({ item, clickFn }) => {
           </div>
 
           {/* ціна */}
-          <div className="tablet:top-[6px] tablet:right-[2px] tablet:text-orange tablet:text-[13px] desktop:w-[80px] desktop:h-full desktop:bg-orange desktop:text-white flex desktop:flex-col tablet:gap-x-[1px] items-center justify-center absolute top-0 right-0 desktop:price">
+          <div className="tablet:top-[6px] tablet:right-[2px] tablet:text-orange tablet:text-[13px] desktop:w-[80px] desktop:min-h-full desktop:bg-orange desktop:text-white flex desktop:flex-col tablet:gap-x-[1px] items-center justify-center absolute desktop:top-0 desktop:right-0 desktop:price">
             <p>{localStorage.getItem("language") === "ua" ? "від " : "от"}</p>
             <p>{item.price} грн</p>
           </div>
@@ -67,6 +73,7 @@ ServiceItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number.isRequired,
     isPopular: PropTypes.bool.isRequired,
+    isNew: PropTypes.bool.isRequired,
     image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
