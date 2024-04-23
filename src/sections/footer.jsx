@@ -1,6 +1,6 @@
 import { useState } from "react";
 import KiwiCode from "../components/kiwiCode";
-import NavDesktop from "../components/navDesktop";
+import Menu from "../components/menu";
 
 import Overlay from "../components/UI/overlay";
 import TermsOfService from "../components/termsOfService";
@@ -20,13 +20,16 @@ const Footer = () => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
   return (
-    <footer className="w-full min-h-[337px] overflow-hidden">
-      <div className="wrapper tablet:pt-7 desktop:pt-[55px] flex flex-col">
-        <div className="flex">
-          <NavDesktop />
-          <div className="w-full grid tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 tablet:ml-7 desktop:ml-[102px] laptop:gap-y-1 items-center">
+    <footer className="w-full h-[424px] tablet:h-[448px] laptop:h-[472px] desktop:min-h-[340px] overflow-hidden">
+      <div className="wrapper pt-[21px] laptop:pt-[122px] desktop:pt-[55px] flex flex-col">
+        <div className="flex flex-col gap-y-4 tablet:flex-row tablet:gap-y-0 tablet:gap-x-12 laptop:gap-x-7 desktop:gap-x-[118px]">
+          <Menu />
+          <div className="w-full flex flex-wrap tablet:grid tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 laptop:gap-y-1 items-center">
             {items.map(el => (
-              <p key={el} className="text-base font-light leading-[26px] ">
+              <p
+                key={el}
+                className="text-xs font-medium w-[166px] tablet:w-fit tablet:text-base tablet:font-light leading-[16px]"
+              >
                 {t(`what_do_we_do.${el - 1}`)}
               </p>
             ))}
@@ -34,16 +37,18 @@ const Footer = () => {
         </div>
         <KiwiCode />
 
-        <p className="flex gap-x-1 text-sm font-medium mx-auto">
+        <div className="flex flex-col tablet:flex-row gap-x-1 text-sm mx-auto leading-[18px]">
           <span>By using this website, you agree to the</span>
-          <button onClick={() => openInfo("terms")} className="underline underline-offset-1">
-            Terms of Service{" "}
-          </button>{" "}
-          and
-          <button onClick={() => openInfo("policy")} className="underline underline-offset-1">
-            Privacy Policy{" "}
-          </button>
-        </p>
+          <div className="flex gap-x-1 mx-auto">
+            <button onClick={() => openInfo("terms")} className="underline underline-offset-1">
+              Terms of Service{" "}
+            </button>{" "}
+            and
+            <button onClick={() => openInfo("policy")} className="underline underline-offset-1">
+              Privacy Policy{" "}
+            </button>
+          </div>
+        </div>
 
         {isModalOpen && typeModal === "terms" && (
           <Overlay clickFn={() => setIsModalOpen(false)}>

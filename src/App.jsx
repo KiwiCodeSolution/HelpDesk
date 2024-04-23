@@ -47,20 +47,22 @@ export const App = () => {
   const ModalLanguage = ({ clickFn, changeLanguage }) => {
     return (
       <Overlay type={"lang"} clickFn={clickFn}>
-        <div className="w-[460px] py-4 px-[65px] modal-wrapper rounded-[32px]">
-          <h3 className="my-[14px] text-center text-medium-28">Мова сайту</h3>
+        <div className="w-[328px] h-[200px] py-3 text-xl font-medium tablet:text-[28px] tablet:w-[360px] desktop:w-[460px] desktop:h-[220px] desktop:py-4 modal-wrapper rounded-[32px]">
+          <h3 className="text-xl font-medium tablet:text-[28px] mb-3 desktop:mb-[14px] text-center">
+            Мова сайту
+          </h3>
 
           <div className="w-full h-1 vector" />
-          <div className="w-full flex gap-x-10 justify-center items-center mt-[52px] mb-[72px]">
+          <div className="flex gap-x-10 justify-center items-center mt-[52px] mb-[72px] mx-auto">
             <button
               onClick={() => changeLanguage("ua")}
-              className="cursor-pointer hover:text-orange hover:underline hover:underline-offset-2 text-medium-28"
+              className="text-xl font-medium tablet:text-[28px] cursor-pointer hover:text-orange hover:underline hover:underline-offset-2"
             >
-              україньска
+              українська
             </button>
             <button
               onClick={() => changeLanguage("ru")}
-              className="cursor-pointer hover:text-orange hover:underline hover:underline-offset-2 text-medium-28"
+              className="text-xl font-medium tablet:text-[28px] cursor-pointer hover:text-orange hover:underline hover:underline-offset-2"
             >
               російська
             </button>

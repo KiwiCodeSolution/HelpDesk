@@ -7,7 +7,7 @@ const ServiceItem = ({ item, clickFn }) => {
   const { t } = useTranslation();
 
   return (
-    <article className="w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item">
+    <article className="w-[252px] h-[232px] tablet:w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item">
       <div className="w-full h-full flex flex-col font-roboto relative service-front">
         {item.isPopular && (
           <p className="w-[78px] h-6 py-1 px-2 bg-orange text-xs font-medium rounded-tl-[6px] rounded-br-[6px] absolute top-0 left-0 z-[10]">
@@ -27,28 +27,29 @@ const ServiceItem = ({ item, clickFn }) => {
               ? "зображення, що описує послугу"
               : "изображение, которое описывает услугу"
           } ${t(`services.${item.id - 1}.title`)}`}
-          className="w-full tablet:h-[178px] desktop:h-[240px] object-cover"
+          className="w-full h-[118px] tablet:h-[178px] desktop:h-[240px] object-cover"
         />
 
-        <div className="w-full tablet:h-24 laptop:h-[86px] desktop:h-[103px] bg-blue tablet:p-[2px] desktop:pl-2 flex relative overflow-hidden">
-          <div className="tablet:w-full desktop:w-[calc(100%-80px)] h-full">
-            <p className="tablet:text-lg tablet:font-bold desktop:text-bold-24">
+        <div className="w-full h-[82px] tablet:h-[86px] desktop:h-[103px] bg-blue pt-1 pl-2 desktop:pl-2 flex relative overflow-hidden">
+          <div className="w-full desktop:w-[calc(100%-80px)] h-full">
+            <p className="text-base tablet:text-lg font-bold desktop:text-2xl tablet:leading-[21px] desktop:leading-7 desktop:mb-1">
               {t(`services.${item.id - 1}.title`)}
             </p>
-            <p className="tablet:text-sm font-medium desktop:text-base leading-[18.75px]">
+            <p className="text-sm tablet:font-medium leading-4">
               {t(`services.${item.id - 1}.text`)}
             </p>
           </div>
 
           {/* ціна */}
-          <div className="tablet:top-[6px] tablet:right-[2px] tablet:text-orange tablet:text-[13px] desktop:w-[80px] desktop:min-h-full desktop:bg-orange desktop:text-white flex desktop:flex-col tablet:gap-x-[1px] items-center justify-center absolute desktop:top-0 desktop:right-0 desktop:price">
-            <p>{localStorage.getItem("language") === "ua" ? "від " : "от"}</p>
-            <p>{item.price} грн</p>
+          <div className="top-[4px] right-[2px] text-orange tablet:text-[13px] desktop:w-[80px] desktop:min-h-full desktop:bg-orange desktop:text-white flex desktop:flex-col gap-x-[2px] desktop:gap-x-0 items-center justify-center absolute desktop:top-0 desktop:right-0 desktop:price">
+            <p>{localStorage.getItem("language") === "ua" ? "від" : "от"}</p>
+
+            <p> {item.price} грн</p>
           </div>
         </div>
         <Button
           style={"orange"}
-          btnClass={"w-full rounded-b-lg desktop:hidden"}
+          btnClass={"w-full rounded-b-lg h-8 tablet:h-10 text-sm tablet:text-lg desktop:hidden"}
           clickFn={() => clickFn(item.title)}
         >
           {t(`serviceItem_button`)}

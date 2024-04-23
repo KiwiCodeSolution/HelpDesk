@@ -106,47 +106,50 @@
   margin-right: auto;
 }
 
-@media only screen and (max-width: 767px) {
-  .hero-wrapper {
-    background-image: url("/images/bg_hero_mobile.png");
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-  }
+.hero-wrapper {
+  background-image: url("/images/bg_hero_mobile.png");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
 
-  .about {
-    background-image: url("/images/bg_about_gradient.png");
+  @media screen and (min-width: 768px) {
+    background-image: url("/images/bg_hero.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .hero-wrapper {
-    background-image: url("/images/bg_hero.png");
-    background-size: cover;
-  }
+.about {
+  background-image: url("/images/bg_about_gradient.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  .about {
+  @media screen and (min-width: 768px) {
     background-size: 1920px 100%;
     background-position: center 63px;
   }
 
-  .contacts {
-    background-image: url("/images/bg_contacts_gradient.png");
-    background-size: 1920px 100%;
-    background-position: center left 15%;
-    background-repeat: no-repeat;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .about {
+  @media screen and (min-width: 1024px) {
     background-position: center 83px;
   }
 
-  .contacts {
+  @media screen and (min-width: 1440px) {
+  }
+}
+
+.contacts {
+  background-image: url("/images/bg_contacts_gradient.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    background-size: 1920px 100%;
+    background-position: center;
+  }
+
+  @media screen and (min-width: 1024px) {
     background-position: center;
   }
 }
@@ -252,9 +255,9 @@ button:hover .cross {
   transform: rotate(90deg);
 }
 
-/* .contacts {
-  background-image: url("/images/bg_contacts_gradient.png");
-  background-size: 1920px 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+.menu_mobile {
+  width: 152px;
+  height: 234px;
+  border-radius: 0px 32px 0px 32px;
+  background: linear-gradient(90deg, #024588 0%, #030d42 100%);
+}

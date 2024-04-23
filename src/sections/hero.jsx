@@ -14,18 +14,42 @@ const Hero = () => {
     setIsProblem(theme);
   }
   return (
-    <section className="w-full h-[660px] tablet:min-h-[728px] desktop:min-h-[832px] pl-4 pr-[14px] pt-[107px] tablet:pl-[52px] tablet:pt-[130px] laptop:pt-[170px] desktop:pl-[100px] desktop:pt-[173px] hero-wrapper overflow-hidden">
-      <div className="w-[345px] tablet:w-[593px] desktop:w-[725px]">
-        <h1 className="w-full text-[23px] tablet:text-[32px] font-extrabold laptop:text-4xl desktop:text-extra-bold uppercase leading-[31px] tablet:leading-[48px]">
-          <span className="text-orange"> {t(`hero.${0}`)}</span> {t(`hero.${1}`)}{" "}
-          <span className="text-orange">{t(`hero.${2}`)}</span> {t(`hero.${3}`)}
+    <section
+      className="w-full h-[660px] pl-4 pr-[14px] pt-[107px] hero-wrapper overflow-hidden
+    tablet:h-[728px] tablet:pl-[52px] tablet:pt-[130px] 
+    laptop:pl-[60px] laptop:pt-[170px] 
+    desktop:h-[832px] desktop:pl-[100px] desktop:pt-[183px] z-0"
+    >
+      <div
+        className="w-[345px] 
+      tablet:w-[593px] 
+      laptop:w-[725px]"
+      >
+        <h1
+          className="w-full text-[23px] font-extrabold uppercase leading-[31px] 
+        tablet:text-[32px] tablet:leading-[48px] 
+        laptop:text-4xl 
+        desktop:text-[40px]"
+        >
+          <span className="text-orange"> {t(`hero.${0}`)},</span> {t(`hero.${1}`)}{" "}
+          <span className="text-orange">{t(`hero.${2}`)}</span> {t(`hero.${3}`)}{" "}
+          <span className="text-orange">{t(`hero.${4}`)}</span> {t(`hero.${5}`)}{" "}
         </h1>
-        <h2 className="text-base font-bold tablet:w-[439px] tablet:text-xl desktop:w-full desktop:text-bold-24 mt-4 tablet:mt-2 mb-4 tablet:my-5 desktop:mb-10">
-          {t(`hero.${4}`)} <span className="text-orange">{t(`hero.${5}`)}</span> {t(`hero.${6}`)}
+        <h2
+          className="text-base font-bold my-4 leading-[22px] 
+        tablet:w-[439px] tablet:text-xl tablet:my-5 tablet:leading-6
+        laptop:w-full 
+        desktop:text-2xl desktop:mt-2 desktop:mb-10"
+        >
+          {t(`hero.${6}`)} <span className="text-orange">{t(`hero.${7}`)}</span> {t(`hero.${8}`)}
         </h2>
-        <div className="flex gap-x-4 items-center text-medium-20">
+        <div className="flex gap-x-1.5 tablet:gap-x-3 items-center">
           <Tools />
-          <h3 className="w-[262px] tablet:w-[443px] text-base font-medium tablet:text-xl desktop:">
+          <h3
+            className="w-[262px] text-base font-semibold leading-[22px]
+          tablet:w-[443px] tablet:text-xl tablet:font-medium tablet:leading-6
+          desktop:w-[446px]"
+          >
             {t(`hero_subtitle`)}
           </h3>
         </div>
@@ -35,7 +59,7 @@ const Hero = () => {
       <Button
         style={"orange"}
         btnClass={
-          "mx-auto mt-[197px] tablet:mt-[46px] tablet:ml-0 h-12 laptop:ml-[60px] laptop:mt-[46px] rounded-[6px] desktop:mt-[60px] desktop:h-[60px]"
+          "w-[280px] mx-auto mt-[197px] rounded-lg h-12 text-xl tablet:mt-[46px] tablet:ml-0 laptop:ml-[120px] laptop:mt-[46px] desktop:mt-[60px] desktop:w-[304px] desktop:h-[60px] desktop:text-2xl"
         }
         clickFn={() => openingModalForm("Проблеми немає у переліку")}
       >
