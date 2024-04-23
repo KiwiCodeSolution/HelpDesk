@@ -15,7 +15,11 @@ const NavMobile = () => {
 
   return (
     <>
-      <button className="mt-2" onClick={() => setIsOpen(true)} style={{ cursor: "pointer" }}>
+      <button
+        className="mt-3 mr-0 h-fit"
+        onClick={() => setIsOpen(true)}
+        style={{ cursor: "pointer" }}
+      >
         <MenuIcon />
       </button>
       {isOpen && (

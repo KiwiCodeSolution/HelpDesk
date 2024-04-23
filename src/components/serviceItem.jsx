@@ -41,7 +41,7 @@ const ServiceItem = ({ item, clickFn }) => {
           </div>
 
           {/* ціна */}
-          <div className="top-[4px] right-[2px] text-orange tablet:text-[13px] desktop:w-[80px] desktop:min-h-full desktop:bg-orange desktop:text-white flex desktop:flex-col gap-x-[2px] desktop:gap-x-0 items-center justify-center absolute desktop:top-0 desktop:right-0 desktop:price">
+          <div className="top-[4px] right-[2px] text-orange tablet:text-[13px] desktop:text-base desktop:w-[80px] desktop:min-h-full desktop:bg-orange desktop:text-white flex desktop:flex-col gap-x-[2px] desktop:gap-x-0 items-center justify-center absolute desktop:top-0 desktop:right-0 desktop:price">
             <p>{localStorage.getItem("language") === "ua" ? "від" : "от"}</p>
 
             <p> {item.price} грн</p>
@@ -62,7 +62,11 @@ const ServiceItem = ({ item, clickFn }) => {
           <p className="w-[70%] text-base font-medium">{t(`services.${item.id - 1}.text`)}</p>
         </div>
 
-        <Button style={"orange"} btnClass={"w-full h-[103px]"} clickFn={() => clickFn(item.title)}>
+        <Button
+          style={"orange"}
+          btnClass={"w-full h-[103px] desktop:text-2xl"}
+          clickFn={() => clickFn(item.title)}
+        >
           {t(`serviceItem_button`)}
         </Button>
       </div>
