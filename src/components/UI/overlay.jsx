@@ -49,7 +49,7 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
     <div
       className={`${
         type === "menu" ? "" : "backdrop-blur"
-      }fixed h-screen w-full z-[999] rounded-lg bg-[rgba(0,0,0,0.6)] top-0 left-0 ${overlayClass}`}
+      } fixed h-screen w-full z-[999] rounded-lg bg-[rgba(0,0,0,0.6)] top-0 left-0 ${overlayClass}`}
       onClick={handleOverlayClick}
     >
       <section
