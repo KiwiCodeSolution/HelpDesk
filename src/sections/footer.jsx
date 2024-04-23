@@ -20,7 +20,7 @@ const Footer = () => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
   return (
-    <footer className="w-full h-[424px] tablet:h-[448px] laptop:h-[472px] desktop:min-h-[340px] overflow-hidden">
+    <footer className="w-full h-[424px] tablet:h-[448px] laptop:h-[472px] desktop:h-[360px] overflow-hidden">
       <div className="wrapper pt-[21px] laptop:pt-[122px] desktop:pt-[55px] flex flex-col">
         <div className="flex flex-col gap-y-4 tablet:flex-row tablet:gap-y-0 tablet:gap-x-12 laptop:gap-x-7 desktop:gap-x-[118px]">
           <Menu />
