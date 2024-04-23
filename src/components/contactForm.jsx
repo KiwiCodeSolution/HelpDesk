@@ -68,38 +68,41 @@ const ContactForm = ({ clickFn, problem }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-[600px] mx-auto flex flex-col relative">
-      <p className="text-center text-regular-16 tablet:my-4 desktop:my-6">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-[328px] tablet:w-[480px] laptop:w-[600px] mx-auto flex flex-col relative"
+    >
+      <p className="text-center text-base tablet:font-medium my-4 desktop:my-6">
         {t(`feedback_subtitle`)}
       </p>
-      <div className="tablet:w-[480px] laptop:w-full flex flex-col mb-6 mx-auto relative">
-        <label className="text-medium-14">{t(`name`)}</label>
+      <div className="w-full flex flex-col mb-6 mx-auto relative gap-y-1">
+        <label className="text-sm font-medium">{t(`name`)}</label>
         <input
           name="name"
           {...register("name")}
-          className="h-9 rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
+          className="h-8 tablet:h-9 rounded-[6px] outline-none py-2 px-1.5 tablet:px-3 text-base placeholder:text-base placeholder:text-grey text-black"
           placeholder={t(`placeholder.name`)}
         />
         {errors.name && <ErrorWrapper text={errors.name.message} />}
       </div>
 
-      <div className="tablet:w-[480px] laptop:w-full flex flex-col mb-6 mx-auto relative">
-        <label className="text-medium-14">{t(`phone`)}</label>
+      <div className="w-full flex flex-col mb-6 mx-auto relative gap-y-1">
+        <label className="text-sm font-medium">{t(`phone`)}</label>
         <input
           name="phone"
           {...register("phone")}
           placeholder="+380XXXXXXXXX"
-          className="h-9 rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
+          className="h-8 tablet:h-9 rounded-[6px] outline-none py-2 px-1.5 tablet:px-3 text-base placeholder:text-base placeholder:text-grey text-black"
         />
         {errors.phone && <ErrorWrapper text={errors.phone.message} />}
       </div>
 
-      <div className="tablet:w-[480px] laptop:w-full flex flex-col mb-8 mx-auto relative">
-        <label className="text-medium-14 mb-1">{t(`text`)}</label>
+      <div className="w-full flex flex-col mb-8 mx-auto relative gap-y-1">
+        <label className="text-sm font-medium mb-1">{t(`text`)}</label>
         <textarea
           name="text"
           {...register("text", { maxLength: maxTextLength })}
-          className="h-[90px] rounded-[6px] outline-none py-2 px-3 text-base placeholder:text-base placeholder:text-grey text-black"
+          className="h-[90px] rounded-[6px] outline-none py-2 px-1.5 tablet:px-3 text-base placeholder:text-base placeholder:text-grey text-black"
           style={{
             resize: "none",
           }}
@@ -107,12 +110,12 @@ const ContactForm = ({ clickFn, problem }) => {
         />
         {errors.text && <ErrorWrapper text={errors.text.message} />}
         {/* рахуємо кількість введених символів */}
-        <p className="tablet:w-[480px] laptop:w-full mt-1 pr-[6px] text-right text-base text-grey absolute -bottom-6">
+        <p className="w-full mt-1 pr-[6px] text-right text-xs tablet:text-base text-grey absolute -bottom-6">
           {text ? text.length : 0} / {maxTextLength}
         </p>
       </div>
 
-      <label className="tablet:w-[480px] laptop:w-full flex gap-x-5 text-regular-16 mb-8 mx-auto relative">
+      <label className="w-full flex gap-x-4 text-xs font-medium mb-8 mx-auto relative laptop:text-base laptop:gap-x-4 laptop:font-normal">
         <input
           name="agree"
           type="checkbox"
