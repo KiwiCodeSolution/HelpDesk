@@ -8,13 +8,13 @@ import { useTranslation } from "react-i18next";
 import { firstTell, firstTellShow, secondTell, secondTellShow } from "../sections/contacts";
 import { Life, Vodafone } from "../icons/iconComponent";
 
-const ModalForm = ({ clickFn, problem }) => {
+const ModalForm = ({ clickFn, problem, currentStep }) => {
   const { t } = useTranslation();
-  const [countStep, setCountStep] = useState(1);
+  const [countStep, setCountStep] = useState(currentStep || 1);
 
   const PhoneBlock = ({ className }) => {
     return (
-      <div className={`w-[270px] mx-auto ${className}`}>
+      <div className={`w-[270px] desktop:w-full mx-auto ${className}`}>
         <p className="text-base text-center mb-1">{t(`modal_text.3`)}</p>
         <p className="text-base text-center mb-4 desktop:mb-2">{t(`modal_text.4`)}</p>
         <div className="w-full flex flex-col items-center gap-y-1">
@@ -49,7 +49,7 @@ const ModalForm = ({ clickFn, problem }) => {
             : "h-[584px] desktop:h-[528px]"
         }`}
       >
-        <h3 className="my-[14px] text-center text-bold-24">{t(`modal_title`)}</h3>
+        <h3 className="my-[14px] text-center text-2xl font-bold">{t(`modal_title`)}</h3>
 
         <div className="w-full h-1 vector" />
 
@@ -57,7 +57,7 @@ const ModalForm = ({ clickFn, problem }) => {
 
         {countStep === 2 && (
           <>
-            <div className="w-[270px] flex flex-col items-center mt-[60px] mx-auto">
+            <div className="w-[270px] flex flex-col items-center mt-[60px] mx-auto desktop:w-[335px]">
               <p className="w-full text-2xl font-bold text-center mb-2">{t(`modal_text.0`)}</p>
               <p className="w-full text-2xl font-bold text-center mb-8 desktop:mb-[30px]">
                 {t(`modal_text.1`)}
@@ -72,7 +72,9 @@ const ModalForm = ({ clickFn, problem }) => {
           </>
         )}
 
-        <PhoneBlock className={"hidden tablet:block tablet:w-full"} />
+        <PhoneBlock
+          className={`hidden tablet:block tablet:w-full ${countStep === 1 ? "mt-[22px]" : ""} `}
+        />
       </div>
     </Overlay>
   );

@@ -32,7 +32,7 @@ const Hero = () => {
         desktop:text-[40px]"
         >
           <span className="text-orange"> {t(`hero.${0}`)},</span> {t(`hero.${1}`)}{" "}
-          <span className="text-orange">{t(`hero.${2}`)}</span> {t(`hero.${3}`)}{" "}
+          <span className="text-orange">{t(`hero.${2}`)}</span> {t(`hero.${3}`)} <br />{" "}
           <span className="text-orange">{t(`hero.${4}`)}</span> {t(`hero.${5}`)}{" "}
         </h1>
         <h2
