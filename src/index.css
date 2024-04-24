@@ -192,25 +192,24 @@
     animation-timing-function: ease-out;
     animation-duration: 150ms;
   }
-}
+  .price {
+    transition: transform 0.3s ease;
+  }
 
-.price {
-  transition: transform 0.3s ease;
-}
+  .service-item:hover .price {
+    transform: translateX(105%);
+  }
 
-.service-item:hover .price {
-  transform: translateX(105%);
-}
+  .service-back {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-100%);
+  }
 
-.service-back {
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateX(-100%);
-}
-
-.service-item:hover .service-back {
-  opacity: 1;
-  transform: translateX(0);
+  .service-item:hover .service-back {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .gradient {

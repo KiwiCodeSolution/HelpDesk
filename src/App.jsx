@@ -75,12 +75,14 @@ export const App = () => {
   return (
     <div className="mx-auto relative overflow-hidden">
       <Header />
-      <Hero />
-      <Services />
-      <About />
-      <Experts />
-      <Feedback />
-      <Contacts />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Experts />
+        <Feedback />
+        <Contacts />
+      </main>
       <Footer />
       {isModalOpen && (
         <ModalLanguage changeLanguage={changeLanguage} clickFn={() => setIsModalOpen(false)} />

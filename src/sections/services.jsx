@@ -18,8 +18,6 @@ const Services = () => {
 
   const newServices = items.filter(el => el.isNew);
   const popularServices = items.filter(el => el.isPopular);
-  // const otherServices = items.filter(el => !el.isNew && !el.isPopular);
-  const services = items.filter(el => !el.isNew);
 
   const sortedServices = items.sort((a, b) => {
     // Спочатку порівнюємо, чи обидва елементи не популярні і не нові
@@ -54,6 +52,18 @@ const Services = () => {
       return 1; // елемент 'b' популярний, тому він йде першим
     }
   });
+
+  // Сортування за популярністю та потім за порядком у вихідних даних
+  const otherServices = items
+    .filter(el => !el.isNew)
+    .sort((a, b) => {
+      // Спочатку за популярністю
+      if (b.isPopular - a.isPopular !== 0) {
+        return b.isPopular - a.isPopular;
+      }
+      // Потім за порядком у вихідних даних
+      return a.id - b.id;
+    });
 
   return (
     <section className="w-full" id="services">
@@ -98,8 +108,9 @@ const Services = () => {
             <ServiceItem key={item.id} item={item} clickFn={openingModalForm} />
           ))}
         </div>
+
         <div className="hidden tablet:grid tablet:grid-cols-3 laptop:grid-cols-4 gap-x-4 gap-y-8 z-0">
-          {services.map(item => (
+          {otherServices.map(item => (
             <ServiceItem key={item.id} item={item} clickFn={openingModalForm} />
           ))}
         </div>

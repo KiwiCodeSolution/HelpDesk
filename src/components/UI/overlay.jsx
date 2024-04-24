@@ -30,13 +30,13 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
   }, [blockScroll, clickFn, closeModal]);
 
   //закриваємо модальне вікно із повідомленням після відправки форми
-  useEffect(() => {
-    if (step && step === 2) {
-      setTimeout(() => {
-        closeModal();
-      }, 2500);
-    }
-  }, [step]);
+  // useEffect(() => {
+  //   if (step && step === 2) {
+  //     setTimeout(() => {
+  //       closeModal();
+  //     }, 2500);
+  //   }
+  // }, [step]);
 
   function handleOverlayClick(e) {
     if (e.target === e.currentTarget) {

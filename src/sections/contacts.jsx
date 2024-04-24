@@ -15,7 +15,7 @@ const Contacts = () => {
         <TitleSections styles={"mb-2 laptop:mb-4 desktop:mb-8"}>{t(`contact_title`)}</TitleSections>
         <div className="w-full flex flex-col gap-y-2 laptop:gap-y-4">
           <a
-            className="text-base tablet:font-medium desktop:text-medium-20 hover:text-orange hover:underline hover:underline-offset-2"
+            className="text-base tablet:font-medium desktop:text-xl hover:text-orange hover:underline hover:underline-offset-2"
             href="https://maps.app.goo.gl/3J4KJiHSBq931qpf8"
             target="_blank"
           >
@@ -23,14 +23,14 @@ const Contacts = () => {
           </a>
 
           <a
-            className="text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
+            className="text-base tablet:font-medium desktop:font-normal hover:text-orange hover:underline hover:underline-offset-2"
             href={`tel:${firstTell}`}
           >
             {firstTellShow}
           </a>
 
           <a
-            className="text-base tablet:font-medium desktop:text-regular-16 hover:text-orange hover:underline hover:underline-offset-2"
+            className="text-base tablet:font-medium desktop:font-normal hover:text-orange hover:underline hover:underline-offset-2"
             href={`tel:${secondTell}`}
           >
             {secondTellShow}

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const buttonsStyle = {
   orange: "bg-orange py-1.5 font-bold tablet:px-[42px] desktop:py-3 desktop:px-9 orange-button",
-  send: "w-[160px] h-10 bg-orange text-base font-medium py-3 px-9 desktop:h-12 rounded-lg orange-button",
+  send: "w-[160px] h-10 bg-orange text-base font-medium py-2 px-9 desktop:h-12 rounded-lg orange-button",
   blue: "w-[260px] h-10 tablet:w-[320px] desktop:w-[460px] tablet:h-12 desktop:h-[60px] tablet:py-3 tablet:px-[44px] desktop:py-[18px] desktop:px-[84px] bg-lightblue text-base tablet:font-medium desktop:text-xl rounded-lg button-blue",
 };
 
