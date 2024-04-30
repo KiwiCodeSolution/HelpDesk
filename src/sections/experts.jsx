@@ -18,7 +18,7 @@ const Experts = () => {
             />
             <p className="text-xl font-bold leading-7 tablet:hidden">{t(`expert_title`)}</p>
           </div>
-          <p className="w-full h-5 text-sm font-medium text-black bg-orange px-1 text-center rounded border-[0.5px] border-black border-opacity-10 leading-6 tablet:hidden">
+          <p className="w-full h-5 text-sm font-medium text-black bg-orange px-1 text-center rounded inline-block align-middle border-[0.5px] border-black border-opacity-10 tablet:hidden">
             {t(`expert_subtitle`)}
           </p>
           <p className="text-base tablet:hidden">{t(`expert_text`)}</p>
