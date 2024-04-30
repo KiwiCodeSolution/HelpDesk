@@ -13,6 +13,7 @@ const Hero = () => {
     setIsModalOpen(true);
     setIsProblem(theme);
   }
+
   return (
     <section
       className="w-full h-[660px] pl-4 pr-[14px] pt-[107px] hero-wrapper overflow-hidden

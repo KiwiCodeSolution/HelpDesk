@@ -15,7 +15,7 @@ const ServiceItem = ({ item, clickFn }) => {
               item.isPopular ? "bg-orange" : "bg-heavenly"
             }  text-xs font-medium rounded-tl-[6px] rounded-br-[6px] absolute top-0 left-0 z-[10]`}
           >
-            {item.isPopular ? t(`services_popular`) : "новинка"}
+            {item.isPopular ? t(`services_popular`) : "Новинка"}
           </p>
         )}
 
@@ -66,7 +66,7 @@ const ServiceItem = ({ item, clickFn }) => {
         <Button
           style={"orange"}
           btnClass={"w-full h-[103px] desktop:text-2xl"}
-          clickFn={() => clickFn(item.title)}
+          clickFn={() => clickFn(`${item.title}: ${item.text}`)}
         >
           {t(`serviceItem_button`)}
         </Button>

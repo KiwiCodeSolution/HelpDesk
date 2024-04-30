@@ -23,7 +23,7 @@ const Header = () => {
       >
         <p
           className="text-xs font-bold mt-[7px] 
-        tablet:text-base tablet:font-medium tablet:mt-1 
+        tablet:text-base tablet:font-medium tablet:mt-2 
         laptop:mt-2 
         desktop:text-2xl desktop:mt-2.5"
         >

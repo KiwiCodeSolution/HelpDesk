@@ -113,13 +113,14 @@ const ContactForm = ({ clickFn, problem }) => {
             style={{
               resize: "none",
             }}
+            defaultValue={problem ? problem : ""}
             placeholder={t(`placeholder.text`)}
           />
           {errors.text && <ErrorWrapper text={errors.text.message} />}
 
           {/* рахуємо кількість введених символів */}
           <p className="w-full mt-1 pr-[6px] text-right text-xs tablet:text-base text-grey absolute -bottom-6">
-            {text ? text.length : 0} / {maxTextLength}
+            {text?.length || problem?.length || 0} / {maxTextLength}
           </p>
         </div>
 

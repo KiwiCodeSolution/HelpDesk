@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="wrapper pt-[21px] laptop:pt-[122px] desktop:pt-[55px] flex flex-col">
         <div className="flex flex-col gap-y-4 tablet:flex-row tablet:gap-y-0 tablet:gap-x-12 laptop:gap-x-7 desktop:gap-x-[118px]">
           <Menu />
-          <div className="w-full flex flex-wrap tablet:grid tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 laptop:gap-y-1 items-center">
+          <div className="w-full flex flex-wrap tablet:grid tablet:grid-cols-2 gap-x-3 laptop:grid-cols-3 desktop:grid-cols-4 laptop:gap-y-1 items-center">
             {items.map(el => (
               <p
                 key={el}
