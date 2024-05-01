@@ -6,6 +6,8 @@ import NoImage from "/images/no_picture.jpg";
 const ServiceItem = ({ item, clickFn }) => {
   const { t } = useTranslation();
 
+  const text = t(`services.${item.id - 1}.title`) + ": " + t(`services.${item.id - 1}.text`);
+
   return (
     <article className="w-[252px] h-[232px] tablet:w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item">
       <div className="w-full h-full flex flex-col font-roboto relative service-front">
@@ -50,7 +52,7 @@ const ServiceItem = ({ item, clickFn }) => {
         <Button
           style={"orange"}
           btnClass={"w-full rounded-b-lg h-8 tablet:h-10 text-sm tablet:text-lg desktop:hidden"}
-          clickFn={() => clickFn(item.title)}
+          clickFn={() => clickFn(text)}
         >
           {t(`serviceItem_button`)}
         </Button>
@@ -66,7 +68,7 @@ const ServiceItem = ({ item, clickFn }) => {
         <Button
           style={"orange"}
           btnClass={"w-full h-[103px] desktop:text-2xl"}
-          clickFn={() => clickFn(`${item.title}: ${item.text}`)}
+          clickFn={() => clickFn(text)}
         >
           {t(`serviceItem_button`)}
         </Button>
