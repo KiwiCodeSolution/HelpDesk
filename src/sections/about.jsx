@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const INDICATORS = [
   { id: 1, value: "5" },
-  { id: 2, value: "1800" },
+  { id: 2, value: "2000" },
 ];
 
 const About = () => {

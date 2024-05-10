@@ -104,8 +104,8 @@ const Services = () => {
 
         {/* блоки карток розміру від планшету. немає горизонтального скролу */}
         <div className="hidden tablet:grid tablet:grid-cols-3 laptop:grid-cols-4 gap-x-4 gap-y-8 z-0 mb-10">
-          {newServices.map(item => (
-            <ServiceItem key={item.id} item={item} clickFn={openingModalForm} />
+          {newServices.map((item, index) => (
+            <ServiceItem key={item.id} item={item} clickFn={openingModalForm} index={index} />
           ))}
         </div>
 

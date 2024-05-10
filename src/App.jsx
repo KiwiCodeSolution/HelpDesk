@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import About from "./sections/about";
 import Contacts from "./sections/contacts";
-import Experts from "./sections/experts";
+// import Experts from "./sections/experts";
 import Feedback from "./sections/feedback";
 import Footer from "./sections/footer";
 import Header from "./sections/header";
@@ -79,7 +79,7 @@ export const App = () => {
         <Hero />
         <Services />
         <About />
-        <Experts />
+        {/* <Experts /> */}
         <Feedback />
         <Contacts />
       </main>

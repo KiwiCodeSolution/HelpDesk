@@ -3,11 +3,17 @@ import Button from "./UI/buttons";
 import { useTranslation } from "react-i18next";
 import NoImage from "/images/no_picture.jpg";
 
-const ServiceItem = ({ item, clickFn }) => {
+const ServiceItem = ({ item, clickFn, index }) => {
   const { t } = useTranslation();
 
+  const text = t(`services.${item.id - 1}.title`) + ": " + t(`services.${item.id - 1}.text`);
+
   return (
-    <article className="w-[252px] h-[232px] tablet:w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item">
+    <article
+      className={`w-[252px] h-[232px] tablet:w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item ${
+        item.isNew && index === 0 ? "desktop:col-start-2" : ""
+      }`}
+    >
       <div className="w-full h-full flex flex-col font-roboto relative service-front">
         {(item.isPopular || item.isNew) && (
           <p
@@ -50,7 +56,7 @@ const ServiceItem = ({ item, clickFn }) => {
         <Button
           style={"orange"}
           btnClass={"w-full rounded-b-lg h-8 tablet:h-10 text-sm tablet:text-lg desktop:hidden"}
-          clickFn={() => clickFn(item.title)}
+          clickFn={() => clickFn(text)}
         >
           {t(`serviceItem_button`)}
         </Button>
@@ -66,7 +72,7 @@ const ServiceItem = ({ item, clickFn }) => {
         <Button
           style={"orange"}
           btnClass={"w-full h-[103px] desktop:text-2xl"}
-          clickFn={() => clickFn(`${item.title}: ${item.text}`)}
+          clickFn={() => clickFn(text)}
         >
           {t(`serviceItem_button`)}
         </Button>
@@ -86,6 +92,7 @@ ServiceItem.propTypes = {
     price: PropTypes.string.isRequired,
   }),
   clickFn: PropTypes.func,
+  index: PropTypes.number.isRequired,
 };
 
 export default ServiceItem;
