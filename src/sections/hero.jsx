@@ -19,7 +19,7 @@ const Hero = () => {
       className="w-full h-[660px] pl-4 pr-[14px] pt-[107px] hero-wrapper overflow-hidden
     tablet:h-[728px] tablet:pl-[52px] tablet:pt-[130px] 
     laptop:pl-[60px] laptop:pt-[170px] 
-    desktop:h-[832px] desktop:pl-[100px] desktop:pt-[183px] z-0"
+     desktop:pl-[100px] desktop:pt-[183px] z-0"
     >
       <div
         className="w-[345px] 

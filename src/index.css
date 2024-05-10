@@ -131,7 +131,7 @@
   }
 
   @media screen and (min-width: 1024px) {
-    background-position: center 83px;
+    background-position: center;
   }
 
   @media screen and (min-width: 1440px) {
