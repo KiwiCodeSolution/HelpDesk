@@ -3,16 +3,16 @@ import Button from "./UI/buttons";
 import { useTranslation } from "react-i18next";
 import NoImage from "/images/no_picture.jpg";
 
-const ServiceItem = ({ item, clickFn, index }) => {
+const ServiceItem = ({ item, clickFn }) => {
   const { t } = useTranslation();
 
   const text = t(`services.${item.id - 1}.title`) + ": " + t(`services.${item.id - 1}.text`);
 
   return (
     <article
-      className={`w-[252px] h-[232px] tablet:w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item ${
-        item.isNew && index === 0 ? "desktop:col-start-2" : ""
-      }`}
+      className={`w-[252px] h-[232px] tablet:w-full tablet:h-[312px] laptop:h-[304px] desktop:h-[344px] rounded-lg overflow-hidden relative service-item 
+     
+      `}
     >
       <div className="w-full h-full flex flex-col font-roboto relative service-front">
         {(item.isPopular || item.isNew) && (

@@ -124,5 +124,23 @@
     "isPopular": false,
     "isNew": true,
     "image": "/images/services/conditioner.png"
+  },
+  {
+    "id": 15,
+    "title": "Ремонт телевізорів",
+    "text": "Професійний ремонт бензинових/дизельних генераторів будь-якої складності у короткі сроки",
+    "price": "230",
+    "isPopular": false,
+    "isNew": true,
+    "image": "/images/services/tv.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Ремонт холодильників",
+    "text": "",
+    "price": "220",
+    "isPopular": false,
+    "isNew": true,
+    "image": "/images/services/fridge.jpg"
   }
 ]
