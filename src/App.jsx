@@ -13,11 +13,14 @@ import Services from "./sections/services";
 import { useTranslation } from "react-i18next";
 import Overlay from "./components/UI/overlay";
 import useScrollBlock from "./hooks/useScrollBlock";
+import CallBanner from "./components/UI/callBanner";
 
 export const App = () => {
   const [blockScroll, allowScroll] = useScrollBlock();
   const isCurrentLanguage = localStorage.getItem("language");
   const [isModalOpen, setIsModalOpen] = useState(isCurrentLanguage === null);
+  const [isCallModalOpen, setIsCallModalOpen] = useState(true);
+
   const { i18n } = useTranslation();
 
   // Функція для зміни назви сайту в залежності від обраної мови
@@ -87,6 +90,7 @@ export const App = () => {
       {isModalOpen && (
         <ModalLanguage changeLanguage={changeLanguage} clickFn={() => setIsModalOpen(false)} />
       )}
+      {isCallModalOpen && <CallBanner clickFn={() => setIsCallModalOpen(false)} />}
     </div>
   );
 };

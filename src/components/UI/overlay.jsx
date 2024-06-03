@@ -7,7 +7,7 @@ import { Cross } from "../../icons/iconComponent";
 
 const modalRoot = document.querySelector("#modal-root");
 
-const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
+const Overlay = ({ children, clickFn, overlayClass, type }) => {
   const [blockScroll, allowScroll] = useScrollBlock();
 
   function closeModal() {
@@ -28,15 +28,6 @@ const Overlay = ({ children, clickFn, overlayClass, type, step }) => {
       window.removeEventListener("keydown", keyDown);
     };
   }, [blockScroll, clickFn, closeModal]);
-
-  //закриваємо модальне вікно із повідомленням після відправки форми
-  // useEffect(() => {
-  //   if (step && step === 2) {
-  //     setTimeout(() => {
-  //       closeModal();
-  //     }, 2500);
-  //   }
-  // }, [step]);
 
   function handleOverlayClick(e) {
     if (e.target === e.currentTarget) {

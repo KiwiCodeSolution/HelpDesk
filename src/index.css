@@ -75,6 +75,10 @@
   }
 }
 
+.call-banner {
+  background: linear-gradient(90deg, #030d42 0%, #014f95 100%);
+}
+
 .body-scroll-lock {
   overflow: hidden;
 }

@@ -11,6 +11,16 @@ export default {
         lightblue: "#163998", //світло синій
         heavenly: "#00A0FF", // голубий (яскравий)
       },
+      keyframes: {
+        bell: {
+          "0%, 20%, 40%, 60%, 80%, 100%": {
+            transform: "rotate(10deg)",
+          },
+          "10%, 30%, 50%, 70%, 90%": {
+            transform: "rotate(-10deg)",
+          },
+        },
+      }, 
       fontFamily: {
         main: "Nunito, sans-serif",
         roboto: "Roboto, sans-serif",
