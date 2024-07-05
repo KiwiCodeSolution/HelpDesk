@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import Overlay from "./components/UI/overlay";
 import useScrollBlock from "./hooks/useScrollBlock";
 import CallBanner from "./components/UI/callBanner";
+import Promo from "./sections/promo";
 
 export const App = () => {
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -85,6 +86,7 @@ export const App = () => {
         {/* <Experts /> */}
         <Feedback />
         <Contacts />
+        <Promo />
       </main>
       <Footer />
       {isModalOpen && (
