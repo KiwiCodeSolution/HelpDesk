@@ -11,6 +11,10 @@ export default {
         lightblue: "#163998", //світло синій
         heavenly: "#00A0FF", // голубий (яскравий)
       },
+      animation: {
+        'pulse-slow': 'pulse 2s infinite',
+        'color-pulse': 'colorPulse 2s infinite',
+      },
       keyframes: {
         bell: {
           "0%, 20%, 40%, 60%, 80%, 100%": {
@@ -19,6 +23,14 @@ export default {
           "10%, 30%, 50%, 70%, 90%": {
             transform: "rotate(-10deg)",
           },
+        }, 
+        pulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
+        colorPulse: {
+          '0%, 100%': { color: '#ffffff' }, // white
+          '50%': { color: '#ff9900' }, // orange
         },
       }, 
       fontFamily: {
