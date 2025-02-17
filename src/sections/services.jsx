@@ -20,36 +20,35 @@ const Services = () => {
   const popularServices = items.filter(el => el.isPopular);
 
   const sortedServices = items.sort((a, b) => {
-    // Спочатку порівнюємо, чи обидва елементи не популярні і не нові
     if (!a.isPopular && !a.isNew && !b.isPopular && !b.isNew) {
-      return 0; // якщо обидва елементи не популярні і не нові, то порядок не змінюється
+      return 0;
     }
-    // Потім порівнюємо, чи обидва елементи нові
+
     if (a.isNew && b.isNew) {
-      return 0; // якщо обидва елементи нові, то порядок не змінюється
+      return 0;
     }
-    // Потім порівнюємо, чи обидва елементи популярні
+
     if (a.isPopular && b.isPopular) {
-      return 0; // якщо обидва елементи популярні, то порядок не змінюється
+      return 0;
     }
-    // В інших випадках визначаємо порядок
+
     if (!a.isPopular && !a.isNew) {
-      return -1; // елемент 'a' не популярний і не новий, тому він йде першим
+      return -1;
     }
     if (!b.isPopular && !b.isNew) {
-      return 1; // елемент 'b' не популярний і не новий, тому він йде першим
+      return 1;
     }
     if (a.isNew) {
-      return -1; // елемент 'a' новий, тому він йде першим
+      return -1;
     }
     if (b.isNew) {
-      return 1; // елемент 'b' новий, тому він йде першим
+      return 1;
     }
     if (a.isPopular) {
-      return -1; // елемент 'a' популярний, тому він йде першим
+      return -1;
     }
     if (b.isPopular) {
-      return 1; // елемент 'b' популярний, тому він йде першим
+      return 1;
     }
   });
 
@@ -57,11 +56,10 @@ const Services = () => {
   const otherServices = items
     .filter(el => !el.isNew)
     .sort((a, b) => {
-      // Спочатку за популярністю
       if (b.isPopular - a.isPopular !== 0) {
         return b.isPopular - a.isPopular;
       }
-      // Потім за порядком у вихідних даних
+
       return a.id - b.id;
     });
 

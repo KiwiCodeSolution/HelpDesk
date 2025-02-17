@@ -1,10 +1,6 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import About from "./sections/about";
 import Contacts from "./sections/contacts";
-// import Experts from "./sections/experts";
 import Feedback from "./sections/feedback";
 import Footer from "./sections/footer";
 import Header from "./sections/header";
@@ -83,7 +79,6 @@ export const App = () => {
         <Hero />
         <Services />
         <About />
-        {/* <Experts /> */}
         <Feedback />
         <Contacts />
         <Promo />
