@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import About from "./sections/about";
 import Contacts from "./sections/contacts";
@@ -11,6 +12,7 @@ import Overlay from "./components/UI/overlay";
 import useScrollBlock from "./hooks/useScrollBlock";
 import CallBanner from "./components/UI/callBanner";
 import Promo from "./sections/promo";
+import PropTypes from "prop-types";
 
 export const App = () => {
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -70,6 +72,11 @@ export const App = () => {
         </div>
       </Overlay>
     );
+  };
+
+  ModalLanguage.propTypes = {
+    clickFn: PropTypes.func.isRequired,
+    changeLanguage: PropTypes.func.isRequired,
   };
 
   return (

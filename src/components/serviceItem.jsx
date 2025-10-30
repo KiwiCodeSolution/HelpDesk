@@ -92,7 +92,6 @@ ServiceItem.propTypes = {
     price: PropTypes.string.isRequired,
   }),
   clickFn: PropTypes.func,
-  index: PropTypes.number.isRequired,
 };
 
 export default ServiceItem;

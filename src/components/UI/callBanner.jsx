@@ -44,7 +44,6 @@ const CallBanner = ({ clickFn }) => {
 };
 
 CallBanner.propTypes = {
-  children: PropTypes.node.isRequired,
   clickFn: PropTypes.func.isRequired,
 };
 
