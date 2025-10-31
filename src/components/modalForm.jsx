@@ -5,8 +5,8 @@ import Overlay from "./UI/overlay";
 import ContactForm from "./contactForm";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { firstTell, firstTellShow, secondTell, secondTellShow } from "../sections/contacts";
-import { Life, Vodafone } from "../icons/iconComponent";
+import { firstTell, firstTellShow } from "../sections/contacts";
+import { Vodafone } from "../icons/iconComponent";
 
 const ModalForm = ({ clickFn, problem, currentStep }) => {
   const { t } = useTranslation();
@@ -26,14 +26,14 @@ const ModalForm = ({ clickFn, problem, currentStep }) => {
             {firstTellShow}
             {countStep === 1 && <span className="hidden tablet:block">{t(`modal_text.5`)}</span>}
           </a>
-          <a
+          {/* <a
             href={`tel:${secondTell}`}
             className="text-2xl font-bold flex items-center gap-x-2 text-[#FFC40C] hover:underline hover:underline-offset-2"
           >
             <Life />
             {secondTellShow}
             {countStep === 1 && <span className="hidden tablet:block">{t(`modal_text.6`)}</span>}
-          </a>
+          </a> */}
           {countStep === 2 && <span className="text-2xl font-bold mt-1">{t(`modal_text.5`)}</span>}
         </div>
       </div>

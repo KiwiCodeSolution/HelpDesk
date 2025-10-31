@@ -21,7 +21,7 @@ const CallBanner = ({ clickFn }) => {
         <Cross className={"w-5 h-5 cross"} />
       </button>
       <a
-        href="https://t.me/+380505171154"
+        href="https://t.me/+380663408695"
         className="hidden md:flex w-fit h-fit px-5 py-3 border border-white rounded-lg text-white  gap-x-4 xl:gap-x-10 items-center justify-center hover:bg-orange hover:border-orange"
       >
         <Call className={"animate-[bell_2.5s_ease-in-out_infinite] call-icon"} />
@@ -30,7 +30,7 @@ const CallBanner = ({ clickFn }) => {
         </p>
       </a>
       <a
-        href="tel:+380505171154"
+        href="tel:+380663408695"
         className="flex md:hidden w-fit h-fit px-5 py-3 border border-white rounded-lg text-white  gap-x-2 items-center justify-center"
       >
         <Call className={"animate-[bell_2.5s_ease-in-out_infinite] call-icon"} />
