@@ -1,7 +1,9 @@
 {
-  "name": "helpdesk",
+  "name": "onlyhelper",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.2",
+  "homepage": "https://onlyhelper.com.ua",
+  "author": "Poduzova Yevheniia <poduzova.e.kiwicode@gmail.com>",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

@@ -18,6 +18,13 @@ const About = () => {
     setIsVisible(true);
   }
 
+  function formatNumber(number) {
+    if (number > 999) {
+      return new Intl.NumberFormat("uk-UA").format(number);
+    }
+    return number.toString();
+  }
+
   return (
     <section className="w-full about relative overflow-hidden" id="about">
       <div className="wrapper">
@@ -42,7 +49,7 @@ const About = () => {
             INDICATORS.map(({ value, id }) => (
               <li key={value} className="flex flex-col gap-y-2 text-center">
                 <p className="text-4xl font-bold tablet:text-5xl laptop:text-[64px] text-orange">
-                  <CountUp end={value} />+
+                  <CountUp end={value} formattingFn={formatNumber} />+
                 </p>
 
                 <p className="text-base font-bold tablet:text-xl laptop:text-2xl">

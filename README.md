@@ -1,8 +1,161 @@
-# React + Vite
+# **📘 Опис проєкту**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**OnLyHepler** — це мультимовний сайт комп’ютерного сервісу, створений на **Vite + React**, з підтримкою української та російської мов, адаптивним дизайном, інтерактивними формами та блоками послуг. Сайт оптимізовано для швидкості, SEO та містить інтеграцію **Google Analytics (GA4)**.
 
-Currently, two official plugins are available:
+Він включає:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔤 Підтримка кількох мов (UA / RU) за допомогою i18next
+- 🧩 Каталог послуг на основі services.json (назва, опис, ціна, прапорці: isPopular, isNew)
+- 📈 Анімовані лічильники в секції «Про нас» з використанням react-countup + intersection observer
+- 📨 Форма зворотного зв’язку з валідацією (ім’я, телефон, опис проблеми, чекбокс згоди)
+- 🎯 Промо-секція з виділенням знижки та текстовими анімаціями
+- 📱 Повністю адаптивний інтерфейс: мобільний → планшет → ноутбук → десктоп (до 1440+)
+- 📊 Інтеграція Google Analytics 4 для відстеження трафіку
+- 📃 Тексти Політики конфіденційності та Умов використання включені в переклади
+
+Сайт розроблений командою **KiwiCodeSolutions** як легкий і гнучкий веб-продукт, готовий до розширення.
+
+---
+
+# **🚀 Технології**
+
+|                   **Технологія**                    |           **Опис**           |
+| :-------------------------------------------------: | :--------------------------: |
+|                    **React 18**                     |          основа UI           |
+|                     **Vite 5**                      | швидкий білдер та dev-сервер |
+|                   **TailwindCSS**                   |     гнучкі utility-класи     |
+|                     **i18next**                     |     дві мови + детектор      |
+|              **React Hook Form + Yup**              |      форми з валідацією      |
+| **Framer Motion / CountUp / Intersection Observer** |           анімації           |
+|             **Google Analytics (GA4)**              |   аналітика відвідуваності   |
+|                     **Netlify**                     |            деплой            |
+
+---
+
+# **🧩 Основний функціонал**
+
+### **✔ Подача заявок через Telegram**
+Модулі сайту інтегровані з Telegram, тож усі звернення зберігаються і одразу потрапляють до команди.
+
+- заявки надсилаються з модального вікна або форми на сайті без перезавантаження сторінки
+- про кожну нову заявку Telegram-бот автоматично надсилає повідомлення в робочу групу, щоб команда могла швидко відреагувати
+
+
+---
+
+### **✔ 🔤 Мультимовність**
+
+- модальне вікно вибору мови
+- локалізація всіх секцій (hero, services, footer, promo, terms…)
+- збереження вибору у localStorage
+- автоматична зміна <title>
+
+---
+
+### **✔ Блоки сайту**
+
+- **Hero** — головний заголовок + CTA кнопка + модальне вікно
+- **Services** — нові, популярні та всі послуги (JSON)
+- **About** — анімаційні лічильники роботи компанії
+- **Feedback** — форма заявки
+- **Promo** — промо-акція -15%
+- **Contacts** — телефон та адреса
+- **Footer** — політика конфіденційності та умови
+
+---
+
+### **✔ Аналітика GA4**
+
+Підключено через офіційний тег у index.html:
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+
+---
+
+# **📂 Структура проєкту**
+```
+src/
+├── App.jsx
+├── main.jsx
+├── index.css
+├── sections/
+│ ├── about.jsx
+│ ├── contacts.jsx
+│ ├── feedback.jsx
+│ ├── footer.jsx
+│ ├── header.jsx
+│ ├── hero.jsx
+│ ├── promo.jsx
+│ └── services.jsx
+│
+├── components/
+│ ├── UI/
+│ ├── modalForm.jsx
+│ ├── serviceItem.jsx
+│ ├── titleSections.jsx
+│ └── ...
+│
+├── hooks/
+│ └── useScrollBlock.js
+│
+├── data/
+│ └── services.json
+│
+├── translations/
+│ ├── ua.json
+│ └── ru.json
+│
+└── i18n.js
+index.html
+```
+---
+
+# **🛠 Скрипти**
+запуск у dev-режимі
+```bash
+npm run dev
+```
+
+продакшн-білд
+```bash
+npm run build
+```
+
+перегляд білду
+```bash
+npm run preview 
+```
+
+деплой на Netlify
+```bash
+npm run deploy 
+```
+---
+
+## 🌱 .env приклад
+
+```env
+VITE_API_CHAT_ID=T7jdaLeMEBoxBpxQBfof9Ok6F68EA0jWBIYn6T
+VITE_API_TOKEN=-125488569544
+```
+
+---
+
+# **🔒 Політика та умови**
+
+Сайт включає:
+
+- Політику конфіденційності
+- Умови використання
+- Модальну форму з галочкою згоди
+
+---
+
+# **👨‍💻 Про команду**
+
+Проєкт створений **KiwiCodeSolutions** — командою розробників, яка спеціалізується на:
+
+- веб-додатках (React / Next.js / Node.js)
+- лендінгах та корпоративних сайтах
+- UX/UI-архітектурі
+- автоматизації бізнес-процесів

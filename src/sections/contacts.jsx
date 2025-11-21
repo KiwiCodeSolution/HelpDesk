@@ -18,11 +18,12 @@ const Contacts = () => {
         <div className="w-full flex flex-col gap-y-2 laptop:gap-y-4">
           {/* <a
             className="text-base tablet:font-medium desktop:text-xl hover:text-orange hover:underline hover:underline-offset-2"
-            href="https://maps.app.goo.gl/ic4CNL6AVoDnKERk6"
+            href="https://maps.app.goo.gl/PHdYuzmzdsvYGuCWA"
             target="_blank"
           >
             {t(`address`)}
           </a> */}
+          <p className="text-base tablet:font-medium desktop:text-xl">{t(`address`)}</p>
           <p>Наш телефон: </p>
           <a
             className="text-base tablet:font-medium desktop:font-normal hover:text-orange hover:underline hover:underline-offset-2"
