@@ -17,6 +17,7 @@
     "i18next": "^23.11.2",
     "i18next-browser-languagedetector": "^7.2.1",
     "i18next-http-backend": "^2.5.0",
+    "pm2": "^6.0.13",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-countup": "^6.5.3",
