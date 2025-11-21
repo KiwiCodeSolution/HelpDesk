@@ -1,8 +1,129 @@
-# React + Vite
+# **📘 Опис проєкту**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**OnLyHepler** — це мультимовний сайт комп’ютерного сервісу, створений на **Vite + React**, з підтримкою української та російської мов, адаптивним дизайном, інтерактивними формами та блоками послуг. Сайт оптимізовано для швидкості, SEO та містить інтеграцію **Google Analytics (GA4)**.
 
-Currently, two official plugins are available:
+Він включає:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- мультимовність (UA / RU)
+- інтерактивні анімації
+- форму заявки з валідацією
+- структуру послуг на основі JSON
+- інтеграцію **Google Analytics 4**
+- адаптивний дизайн від мобільних до desktop 1440+
+
+Сайт розроблений командою **KiwiCodeSolutions** як легкий і гнучкий веб-продукт, готовий до розширення.
+
+---
+
+# **🚀 Технології**
+
+|                   **Технологія**                    |           **Опис**           |
+| :-------------------------------------------------: | :--------------------------: |
+|                    **React 18**                     |          основа UI           |
+|                     **Vite 5**                      | швидкий білдер та dev-сервер |
+|                   **TailwindCSS**                   |     гнучкі utility-класи     |
+|                     **i18next**                     |     дві мови + детектор      |
+|              **React Hook Form + Yup**              |      форми з валідацією      |
+| **Framer Motion / CountUp / Intersection Observer** |           анімації           |
+|             **Google Analytics (GA4)**              |   аналітика відвідуваності   |
+|                     **Netlify**                     |            деплой            |
+
+---
+
+# **🧩 Основний функціонал**
+
+### **✔ Мультимовність**
+
+- модальне вікно вибору мови
+- локалізація всіх секцій (hero, services, footer, promo, terms…)
+- збереження вибору у localStorage
+- автоматична зміна <title>
+
+---
+
+### **✔ Блоки сайту**
+
+- **Hero** — головний заголовок + CTA кнопка + модальне вікно
+- **Services** — нові, популярні та всі послуги (JSON)
+- **About** — анімаційні лічильники роботи компанії
+- **Feedback** — форма заявки
+- **Promo** — промо-акція -15%
+- **Contacts** — телефон та адреса
+- **Footer** — політика конфіденційності та умови
+
+---
+
+### **✔ Аналітика GA4**
+
+Підключено через офіційний тег у index.html:
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+
+---
+
+# **📂 Структура проєкту**
+
+src/
+` `├── App.jsx
+` `├── main.jsx
+` `├── index.css
+` `├── sections/
+` `│ ├── about.jsx
+` `│ ├── contacts.jsx
+` `│ ├── feedback.jsx
+` `│ ├── footer.jsx
+` `│ ├── header.jsx
+` `│ ├── hero.jsx
+` `│ ├── promo.jsx
+` `│ └── services.jsx
+` `│
+` `├── components/
+` `│ ├── UI/
+` `│ ├── modalForm.jsx
+` `│ ├── serviceItem.jsx
+` `│ ├── titleSections.jsx
+` `│ └── ...
+` `│
+` `├── hooks/
+` `│ └── useScrollBlock.js
+` `│
+` `├── data/
+` `│ └── services.json
+` `│
+` `├── translations/
+` `│ ├── ua.json
+` `│ └── ru.json
+` `│
+` `└── i18n.js
+
+index.html
+
+---
+
+# **🛠 Скрипти**
+
+npm run dev # запуск у dev-режимі
+npm run build # продакшн-білд
+npm run preview # перегляд білду
+npm run deploy # деплой на Netlify
+
+---
+
+# **🔒 Політика та умови**
+
+Сайт включає:
+
+- Політику конфіденційності
+- Умови використання
+- Модальну форму з галочкою згоди
+
+---
+
+# **👨‍💻 Про команду**
+
+Проєкт створений **KiwiCodeSolutions** — командою розробників, яка спеціалізується на:
+
+- веб-додатках (React / Next.js / Node.js)
+- лендінгах та корпоративних сайтах
+- UX/UI-архітектурі
+- автоматизації бізнес-процесів
