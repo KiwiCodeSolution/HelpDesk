@@ -4,12 +4,14 @@
 
 Він включає:
 
-- мультимовність (UA / RU)
-- інтерактивні анімації
-- форму заявки з валідацією
-- структуру послуг на основі JSON
-- інтеграцію **Google Analytics 4**
-- адаптивний дизайн від мобільних до desktop 1440+
+- 🔤 Підтримка кількох мов (UA / RU) за допомогою i18next
+- 🧩 Каталог послуг на основі services.json (назва, опис, ціна, прапорці: isPopular, isNew)
+- 📈 Анімовані лічильники в секції «Про нас» з використанням react-countup + intersection observer
+- 📨 Форма зворотного зв’язку з валідацією (ім’я, телефон, опис проблеми, чекбокс згоди)
+- 🎯 Промо-секція з виділенням знижки та текстовими анімаціями
+- 📱 Повністю адаптивний інтерфейс: мобільний → планшет → ноутбук → десктоп (до 1440+)
+- 📊 Інтеграція Google Analytics 4 для відстеження трафіку
+- 📃 Тексти Політики конфіденційності та Умов використання включені в переклади
 
 Сайт розроблений командою **KiwiCodeSolutions** як легкий і гнучкий веб-продукт, готовий до розширення.
 
@@ -32,7 +34,16 @@
 
 # **🧩 Основний функціонал**
 
-### **✔ Мультимовність**
+### **✔ Подача заявок через Telegram**
+Модулі сайту інтегровані з Telegram, тож усі звернення зберігаються і одразу потрапляють до команди.
+
+- заявки надсилаються з модального вікна або форми на сайті без перезавантаження сторінки
+- про кожну нову заявку Telegram-бот автоматично надсилає повідомлення в робочу групу, щоб команда могла швидко відреагувати
+
+
+---
+
+### **✔ 🔤 Мультимовність**
 
 - модальне вікно вибору мови
 - локалізація всіх секцій (hero, services, footer, promo, terms…)
@@ -62,50 +73,71 @@
 ---
 
 # **📂 Структура проєкту**
-
+```
 src/
-` `├── App.jsx
-` `├── main.jsx
-` `├── index.css
-` `├── sections/
-` `│ ├── about.jsx
-` `│ ├── contacts.jsx
-` `│ ├── feedback.jsx
-` `│ ├── footer.jsx
-` `│ ├── header.jsx
-` `│ ├── hero.jsx
-` `│ ├── promo.jsx
-` `│ └── services.jsx
-` `│
-` `├── components/
-` `│ ├── UI/
-` `│ ├── modalForm.jsx
-` `│ ├── serviceItem.jsx
-` `│ ├── titleSections.jsx
-` `│ └── ...
-` `│
-` `├── hooks/
-` `│ └── useScrollBlock.js
-` `│
-` `├── data/
-` `│ └── services.json
-` `│
-` `├── translations/
-` `│ ├── ua.json
-` `│ └── ru.json
-` `│
-` `└── i18n.js
-
+├── App.jsx
+├── main.jsx
+├── index.css
+├── sections/
+│ ├── about.jsx
+│ ├── contacts.jsx
+│ ├── feedback.jsx
+│ ├── footer.jsx
+│ ├── header.jsx
+│ ├── hero.jsx
+│ ├── promo.jsx
+│ └── services.jsx
+│
+├── components/
+│ ├── UI/
+│ ├── modalForm.jsx
+│ ├── serviceItem.jsx
+│ ├── titleSections.jsx
+│ └── ...
+│
+├── hooks/
+│ └── useScrollBlock.js
+│
+├── data/
+│ └── services.json
+│
+├── translations/
+│ ├── ua.json
+│ └── ru.json
+│
+└── i18n.js
 index.html
-
+```
 ---
 
 # **🛠 Скрипти**
+запуск у dev-режимі
+```bash
+npm run dev
+```
 
-npm run dev # запуск у dev-режимі
-npm run build # продакшн-білд
-npm run preview # перегляд білду
-npm run deploy # деплой на Netlify
+продакшн-білд
+```bash
+npm run build
+```
+
+перегляд білду
+```bash
+npm run preview 
+```
+
+деплой на Netlify
+```bash
+npm run deploy 
+```
+---
+
+## 🌱 .env приклад
+
+```env
+VITE_API_CHAT_ID=T7jdaLeMEBoxBpxQBfof9Ok6F68EA0jWBIYn6T
+VITE_API_TOKEN=-125488569544
+```
 
 ---
 
